@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,17 +9,23 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'life_administrador';
 
+  constructor(private router: Router) {}
+
   sidebarOpen = true;
   darkMode = false;
 
   menuItems = [
-    { title: "Inicio", iconClass: "bi-house" },
-    { title: "Horarios", iconClass: "bi-calendar-week" },
-    { title: "Historiales", iconClass: "bi-file-medical" },
-    { title: "Pacientes", iconClass: "bi-file-earmark-person" },
-    { title: "Opciones", iconClass: "bi-gear" },
-    { title: "Salir", iconClass: "bi-box-arrow-left" },
+    { title: "Inicio", iconClass: "bi-house", routerLink: "/inicio" },
+    { title: "Horarios", iconClass: "bi-calendar-week", routerLink: "/inicio" },
+    { title: "Historiales", iconClass: "bi-file-medical", routerLink: "/inicio" },
+    { title: "Pacientes", iconClass: "bi-file-earmark-person", routerLink: "/pacientes" },
+    { title: "Opciones", iconClass: "bi-gear", routerLink: "/inicio" },
+    { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/inicio" },
   ]
+
+  navigateTo(route: string) {
+    this.router.navigate([route]);
+  }
 
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
