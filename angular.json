@@ -48,6 +48,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/boxicons/css/boxicons.min.css"
@@ -114,6 +115,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css"
             ],
             "scripts": []
