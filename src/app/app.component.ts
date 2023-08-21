@@ -9,8 +9,6 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'life_administrador';
 
-  constructor(private router: Router) {}
-
   sidebarOpen = true;
   darkMode = false;
 
@@ -22,6 +20,8 @@ export class AppComponent {
     { title: "Opciones", iconClass: "bi-gear", routerLink: "/inicio" },
     { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/inicio" },
   ]
+
+  constructor(private router: Router) {}
 
   navigateTo(route: string) {
     this.router.navigate([route]);

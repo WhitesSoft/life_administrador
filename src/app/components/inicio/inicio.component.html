@@ -1,43 +1,55 @@
+
+
 <div class="bg-sidebar-color m-8 p-8 max-w-full">
 
-    <!-- Buscador -->
-    <div class="bg-body-color flex items-center w-1/4 rounded-md px-4 py-2">
-        <i class="bi bi-search text-lg mr-2"></i>
-        <input type="search" placeholder="Buscar" name="search" id="search"
-            class="text-base text-text-color font-semibold w-full bg-transparent focus:outline-none">
-    </div>
+  <!-- Buscador -->
+  <div class="bg-body-color flex items-center w-1/4 rounded-md px-4 py-2">
+    <i class="bi bi-search text-lg mr-2"></i>
+    <input type="search" placeholder="Buscar" name="search" id="search"
+      class="text-base text-text-color font-semibold w-full bg-transparent focus:outline-none">
+  </div>
 
+  <div class="flex items-center justify-between mt-3 mb-3">
     <!-- Próximas citas -->
-    <div class="mt-3 mb-3 flex justify-end">
-        <span class="font-semibold text-text-color">Próximas citas</span>
+    <span class="font-semibold text-text-color">Próximas citas</span>
+
+    <!-- Registrar atencion -->
+    <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2">
+      Registrar atención
+    </button>
+  </div>
+
+  <!-- Calendario -->
+  <div>    
+    <div [ngSwitch]="view">
+      <mwl-calendar-month-view
+        *ngSwitchCase="'month'"
+        [viewDate]="viewDate"
+        [events]="events"
+      >
+      </mwl-calendar-month-view>
+      <mwl-calendar-week-view
+        *ngSwitchCase="'week'"
+        [viewDate]="viewDate"
+        [events]="events"
+      >
+      </mwl-calendar-week-view>
+      <mwl-calendar-day-view
+        *ngSwitchCase="'day'"
+        [viewDate]="viewDate"
+        [events]="events"
+        [dayStartHour]="8"
+        [dayStartMinute]="0"
+        [dayEndHour]="19"
+        [dayEndMinute]="30"
+        (eventClicked)="eventClicked($event)"
+      >
+      </mwl-calendar-day-view>
     </div>
+  </div>
 
-    <!-- Calendario -->
-    <div>
+</div>
 
-        <div [ngSwitch]="view">
-            <mwl-calendar-month-view
-              *ngSwitchCase="'month'"
-              [viewDate]="viewDate"
-              [events]="events"
-            >
-            </mwl-calendar-month-view>
-            <mwl-calendar-week-view
-              *ngSwitchCase="'week'"
-              [viewDate]="viewDate"
-              [events]="events"
-            >
-            </mwl-calendar-week-view>
-            <mwl-calendar-day-view
-              *ngSwitchCase="'day'"
-              [viewDate]="viewDate"
-              [events]="events"
-              [dayStartHour]="8"
-              [dayEndHour]="19"
-            >
-            </mwl-calendar-day-view>
-        </div> 
-
-    </div>
-    
+<div *ngIf="modalOpen == true">
+  <app-modal-inicio></app-modal-inicio>
 </div>
