@@ -14,7 +14,7 @@
     <span class="font-semibold text-text-color">Próximas citas</span>
 
     <!-- Registrar atencion -->
-    <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2">
+    <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2" data-bs-toggle="modal" data-bs-target="#modalEvento">
       Registrar atención
     </button>
   </div>
@@ -53,3 +53,5 @@
 <div *ngIf="modalOpen == true">
   <app-modal-inicio></app-modal-inicio>
 </div>
+
+
