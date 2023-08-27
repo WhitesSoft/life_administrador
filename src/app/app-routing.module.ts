@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { PacientesComponent } from './components/pacientes/pacientes.component';
+import { ModalInicioComponent } from './modals/modal-inicio/modal-inicio.component';
 
 
 const routes: Routes = [

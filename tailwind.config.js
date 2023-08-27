@@ -8,6 +8,7 @@ module.exports = {
         "sidebar-color": "var(--sidebar-color)",
         "primary-color": "var(--primary-color)",
         "primary-color-light": "var(--primary-color-light)",
+        "primary-color-dark": "var(--primary-color-dark)",
         "toggle-color": "var(--toggle-color)",
         "text-color": "var(--text-color)",
       },

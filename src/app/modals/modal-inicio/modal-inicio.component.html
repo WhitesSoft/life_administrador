@@ -1,0 +1,53 @@
+<!-- Contenedor global del modal -->
+<div class="fixed inset-0 z-50">
+
+    <!-- Caracteristicas del modal -->
+    <div class="flex items-center justify-center min-h-screen">
+
+        <!-- Oscurecer pantalla al abrir modal -->
+        <div class="modal-bg-container fixed inset-0 bg-gray-600 bg-opacity-75"></div>
+
+        <!-- Contenido del modal -->
+        <div class="modal-container bg-sidebar-color rounded-md overflow-hidden shadow-xl transform transition-all">
+
+            <!-- Contenido -->
+            <div class="modal-wrapper-flex p-5">
+                <h4 class="text-2xl font-semibold mb-4">Registrar atención</h4>
+                <!-- Formulario -->
+                <form action="">
+                    <div>
+                        <label class="text-text-color text-sm font-bold leading-tight tracking-normal">Owner
+                            Name</label>
+                        <input id="name"
+                            class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                            placeholder="James" />
+                    </div>
+
+                    <div>
+                        <label class="text-text-color text-sm font-bold leading-tight tracking-normal">Owner
+                            Name</label>
+                        <input
+                            class="mb-1 mt-1 text-gray-600 focus:outline-none focus:border focus:border-indigo-700 font-normal w-full h-10 flex items-center pl-3 text-sm border-gray-300 rounded border"
+                            placeholder="James" />
+                    </div>
+                </form>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex flex-row-reverse bg-body-color px-4 py-3 gap-4">
+                <button
+                    class="bg-primary-color text-white px-3 py-2 w-full  rounded-md border border-gray-800 shadow-md  font-medium hover:bg-primary-color-dark ">
+                    Registrar
+                </button>
+
+                <button
+                    class="bg-sidebar-color text-text-color px-3 py-2 w-full  rounded-md border border-gray-800 shadow-md  font-medium hover:bg-gray-200 "
+                    (click)="closeModal()">
+                    Cancelar
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
