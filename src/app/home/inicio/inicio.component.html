@@ -1,11 +1,9 @@
-
-
 <div class="bg-sidebar-color m-8 p-8 max-w-full">
 
   <!-- Buscador -->
   <div class="bg-body-color flex items-center w-1/4 rounded-md px-4 py-2">
     <i class="bi bi-search text-lg mr-2"></i>
-    <input type="search" placeholder="Buscar" name="search" id="search"
+    <input placeholder="Buscar" name="search" id="search"
       class="text-base text-text-color font-semibold w-full bg-transparent focus:outline-none">
   </div>
 
@@ -14,7 +12,8 @@
     <span class="font-semibold text-text-color">Próximas citas</span>
 
     <!-- Registrar atencion -->
-    <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2" data-bs-toggle="modal" data-bs-target="#modalEvento">
+    <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2"
+      data-bs-toggle="modal" data-bs-target="#modalEvento">
       Registrar atención
     </button>
   </div>
@@ -53,5 +52,3 @@
 <div *ngIf="modalOpen == true">
   <app-modal-inicio></app-modal-inicio>
 </div>
-
-
