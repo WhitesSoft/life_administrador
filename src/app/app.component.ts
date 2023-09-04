@@ -8,31 +8,4 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'life_administrador';
-
-  sidebarOpen = true;
-  darkMode = false;
-
-  menuItems = [
-    { title: "Inicio", iconClass: "bi-house", routerLink: "/inicio" },
-    { title: "Horarios", iconClass: "bi-calendar-week", routerLink: "/inicio" },
-    { title: "Historiales", iconClass: "bi-file-medical", routerLink: "/inicio" },
-    { title: "Pacientes", iconClass: "bi-file-earmark-person", routerLink: "/pacientes" },
-    { title: "Opciones", iconClass: "bi-gear", routerLink: "/inicio" },
-    { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/inicio" },
-  ]
-
-  constructor(private router: Router) {}
-
-  navigateTo(route: string) {
-    this.router.navigate([route]);
-  }
-
-  toggleSidebar() {
-    this.sidebarOpen = !this.sidebarOpen;
-  }
-
-  toggleDarkMode() {
-    this.darkMode = !this.darkMode;
-  }
-
 }

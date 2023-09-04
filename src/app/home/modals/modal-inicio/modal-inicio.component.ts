@@ -15,4 +15,5 @@ export class ModalInicioComponent {
     this.modalService.$modalRegistrarPaciente.emit(false)
   }
 
+
 }

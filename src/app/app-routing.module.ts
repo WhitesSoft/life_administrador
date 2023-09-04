@@ -1,14 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './components/inicio/inicio.component';
-import { PacientesComponent } from './components/pacientes/pacientes.component';
-import { ModalInicioComponent } from './modals/modal-inicio/modal-inicio.component';
+import { LoginComponent } from './auth/login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: '/inicio', pathMatch: 'full' },
-  { path: 'inicio', component: InicioComponent },
-  { path: 'pacientes', component: PacientesComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent,
+    children: [
+      {
+        path: '', 
+        loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+      }
+    ]
+  },
+
 ];
 
 @NgModule({
