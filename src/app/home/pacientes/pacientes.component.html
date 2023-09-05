@@ -1,1 +1,102 @@
-<p>pacientes works!</p>
+<div class="bg-sidebar-color m-8 p-8 max-w-full">
+
+    <div class="flex items-center justify-between mt-3 mb-3">
+        <!-- Buscador -->
+        <div class="bg-body-color flex items-center w-1/4 rounded-md px-4 py-2">
+            <i class="bi bi-search text-lg mr-2"></i>
+            <input placeholder="Buscar" name="search" id="search"
+                class="text-base text-text-color font-medium w-full bg-transparent focus:outline-none">
+        </div>
+
+        <!-- Registrar atencion -->
+        <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2"
+            data-bs-toggle="modal" data-bs-target="#modalEvento">
+            Crear nuevo paciente
+        </button>
+    </div>
+
+    <!-- Tabla -->
+    <div class="flex flex-col mt-6">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                <div class="overflow-hidden border border-gray-200 rounded-md">
+
+                    <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
+                        <thead class="bg-gray-800 ">
+                            <tr>
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Nombres</span>
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Apellido Paterno</span>
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Apellido Materno</span>
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Teléfono</span>
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Acciones</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-sidebar-color divide-y divide-gray-700">
+
+                            <tr *ngFor="let paciente of pacientes">
+                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                    {{ paciente[0] }}
+                                </td>
+
+                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                    {{ paciente[1] }}
+                                </td>
+
+                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                    {{ paciente[2] }}
+                                </td>
+
+                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                    {{ paciente[3] }}
+                                </td>
+
+                                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                    <div class="flex items-center gap-x-6">
+
+                                        <button
+                                            class="text-gray-500 transition-colors duration-200  hover:text-green-500">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </button>
+
+                                        <button
+                                            class="text-gray-500 transition-colors duration-200  hover:text-yellow-500 focus:outline-none">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </button>
+
+                                        <button
+                                            class="text-gray-500 transition-colors duration-200  hover:text-red-500 focus:outline-none">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

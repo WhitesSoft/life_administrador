@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class PacientesComponent {
 
+  pacientes:any = [
+    [ 'Juan', 'Montero', 'Poclaba', '75725762' ],
+    [ 'Marco', 'Cardozo', 'Izurza', '45454552' ]
+  ]
+
 }
