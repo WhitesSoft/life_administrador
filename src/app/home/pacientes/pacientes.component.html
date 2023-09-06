@@ -1,16 +1,17 @@
-<div class="bg-sidebar-color m-8 p-8 max-w-full">
+<div class="max-w-full p-8 m-8 bg-sidebar-color">
 
     <div class="flex items-center justify-between mt-3 mb-3">
         <!-- Buscador -->
-        <div class="bg-body-color flex items-center w-1/4 rounded-md px-4 py-2">
-            <i class="bi bi-search text-lg mr-2"></i>
+        <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
+            <i class="mr-2 text-lg bi bi-search"></i>
             <input placeholder="Buscar" name="search" id="search"
-                class="text-base text-text-color font-medium w-full bg-transparent focus:outline-none">
+                class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
         </div>
 
-        <!-- Registrar atencion -->
-        <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2"
-            data-bs-toggle="modal" data-bs-target="#modalEvento">
+        <!-- Crear paciente-->
+        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+            data-bs-toggle="modal" data-bs-target="#modalEvento"
+            (click)="openModal('crear')">
             Crear nuevo paciente
         </button>
     </div>
@@ -50,22 +51,22 @@
                                 </th>
                             </tr>
                         </thead>
-                        <tbody class="bg-sidebar-color divide-y divide-gray-700">
+                        <tbody class="divide-y divide-gray-700 bg-sidebar-color">
 
                             <tr *ngFor="let paciente of pacientes">
-                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
                                     {{ paciente[0] }}
                                 </td>
 
-                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
                                     {{ paciente[1] }}
                                 </td>
 
-                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
                                     {{ paciente[2] }}
                                 </td>
 
-                                <td class="px-4 py-4 text-sm whitespace-nowrap text-gray-800">
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
                                     {{ paciente[3] }}
                                 </td>
 
@@ -73,17 +74,18 @@
                                     <div class="flex items-center gap-x-6">
 
                                         <button
-                                            class="text-gray-500 transition-colors duration-200  hover:text-green-500">
+                                            class="text-gray-500 transition-colors duration-200 hover:text-green-500">
                                             <i class="bi bi-eye-fill"></i>
                                         </button>
 
                                         <button
-                                            class="text-gray-500 transition-colors duration-200  hover:text-yellow-500 focus:outline-none">
+                                        (click)="openModal('modificar')"
+                                            class="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none">
                                             <i class="bi bi-pencil-square"></i>
                                         </button>
 
                                         <button
-                                            class="text-gray-500 transition-colors duration-200  hover:text-red-500 focus:outline-none">
+                                            class="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none">
                                             <i class="bi bi-trash-fill"></i>
                                         </button>
 
@@ -99,4 +101,13 @@
         </div>
     </div>
 
+</div>
+
+
+<div *ngIf="modalOpenCrearPaciente == true">
+    <app-formulario-paciente></app-formulario-paciente>
+</div>
+
+<div *ngIf="modalOpenModificarPaciente == true">
+    <app-modificar-formulario-paciente></app-modificar-formulario-paciente>
 </div>

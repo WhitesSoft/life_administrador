@@ -28,7 +28,7 @@
     
     [type='checkbox'],
 	[type='radio'] {
-		@apply h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-color focus:ring-2 focus:ring-primary-color;
+		@apply h-4 w-4 rounded border-gray-300 bg-gray-100 text-primary-color focus:ring-2 focus:ring-primary-color peer-checked:bg-primary-color;
 	}
 }
 
