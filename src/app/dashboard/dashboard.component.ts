@@ -14,15 +14,15 @@ export class DashboardComponent {
   menuItems = [
     { title: "Inicio", iconClass: "bi-house", routerLink: "/dashboard/inicio" },
     { title: "Turnos", iconClass: "bi-calendar-week", routerLink: "/dashboard/turnos" },
-    // { title: "Historiales", iconClass: "bi-file-medical", routerLink: "/inicio" },
+    { title: "Historiales", iconClass: "bi-file-medical", routerLink: "/inicio" },
     { title: "Pacientes", iconClass: "bi-file-earmark-person", routerLink: "/dashboard/pacientes" },
     { title: "Notificaciones", iconClass: "bi-bell-fill", routerLink: "/dashboard/notificaciones" },
     { title: "Pagos", iconClass: "bi-currency-dollar", routerLink: "/dashboard/pagos" },
     { title: "Personal", iconClass: "bi-person-vcard", routerLink: "/dashboard/personal" },
     { title: "Proveedores", iconClass: "bi-person-gear", routerLink: "/dashboard/proveedor" },
     { title: "Inventario", iconClass: "bi-shop", routerLink: "/dashboard/inventario" },
+    { title: "Horario", iconClass: "bi-hourglass-split", routerLink: "/dashboard/horario" },
     { title: "Reportes", iconClass: "bi-flag-fill", routerLink: "/dashboard/reportes" },
-    // { title: "Opciones", iconClass: "bi-gear", routerLink: "" },
     { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/login" },
   ]
 

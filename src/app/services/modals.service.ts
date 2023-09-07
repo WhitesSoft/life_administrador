@@ -48,6 +48,9 @@ export class ModalsService {
   // Inventario
   $modalRegistroInventario = new EventEmitter<any>();
 
+  // Horario
+  $modalCrearHorario = new EventEmitter<any>();
+  $modalModificarHorario = new EventEmitter<any>();
 
   constructor() { }
   

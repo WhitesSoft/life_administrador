@@ -1,0 +1,99 @@
+<!-- Contenedor global del modal -->
+<div class="fixed inset-0 z-50">
+
+    <!-- Caracteristicas del modal -->
+    <div class="flex items-center justify-center min-h-screen">
+
+        <!-- Oscurecer pantalla al abrir modal -->
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75 modal-bg-container"></div>
+
+        <!-- Contenido del modal -->
+        <div class="overflow-hidden transition-all transform rounded-md shadow-xl modal-container bg-sidebar-color">
+
+            <!-- Contenido -->
+            <div class="p-5 modal-wrapper-flex">
+
+                <h4 class="mb-4 text-2xl font-semibold text-center">Crear horario de trabajo</h4>
+
+                <!-- Cabeza -->
+                <div class="flex items-center justify-center gap-4 p-3 border-gray-800 rounded-md border-1">
+                    <!-- Logo -->
+                    <img class="border-gray-800 rounded-full border-1" src="./assets/images/logo.png"
+                        style="width: 80px; height: 80px;" alt="dashboard widget" />
+                    <!-- Datos -->
+                    <div class="flex-1 m-auto">
+                        <h3 class="text-2xl font-semibold text-center">Dental Xperience</h3>
+                    </div>
+
+                </div>
+
+                <!-- Formulario -->
+                <form action="">
+
+                    <h5 class="mt-4 text-lg font-semibold text-start">Seleccione los dias de trabajo</h5>
+
+                    <div class="grid grid-cols-3 gap-3 p-2 mt-2 border-gray-800 rounded-md border-1">
+
+                        <div class="flex flex-col items-center justify-center m-1">
+                            <div class="flex flex-col m-auto">
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="w-5 h-5 text-gray-600 form-checkbox"><span
+                                        class="ml-2 text-gray-700">Lunes</span>
+                                </label>
+
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="w-5 h-5 text-red-600 form-checkbox"><span
+                                        class="ml-2 text-gray-700">Martes</span>
+                                </label>
+
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="w-5 h-5 text-orange-600 form-checkbox"><span
+                                        class="ml-2 text-gray-700">Miercoles</span>
+                                </label>
+
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="w-5 h-5 text-yellow-600 form-checkbox"><span
+                                        class="ml-2 text-gray-700">Jueves</span>
+                                </label>
+
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="w-5 h-5 text-green-600 form-checkbox"><span
+                                        class="ml-2 text-gray-700">Viernes</span>
+                                </label>
+
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="w-5 h-5 text-teal-600 form-checkbox"><span
+                                        class="ml-2 text-gray-700">Sabado</span>
+                                </label>
+
+                                <label class="inline-flex items-center mt-3">
+                                    <input type="checkbox" class="w-5 h-5 text-blue-600 form-checkbox"><span
+                                        class="ml-2 text-gray-700">Domingo</span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex flex-row-reverse gap-4 px-4 py-3 bg-body-color">
+                <button
+                    class="w-full px-3 py-2 font-medium border border-gray-800 rounded-md shadow-md bg-sidebar-color text-text-color hover:bg-gray-200"
+                    (click)="closeModal()">
+                    Cancelar
+                </button>
+
+                <button
+                    class="w-full px-3 py-2 font-medium text-white border border-gray-800 rounded-md shadow-md bg-primary-color hover:bg-primary-color-dark ">
+                    Asignar
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
