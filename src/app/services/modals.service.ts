@@ -5,9 +5,6 @@ import { EventEmitter, Injectable } from '@angular/core';
 })
 export class ModalsService {
 
-  // Observable
-  $modalRegistrarPaciente = new EventEmitter<any>();
-
   // Paciente
   $modalDetallePaciente = new EventEmitter<any>();
   $modalCrearPaciente = new EventEmitter<any>();
@@ -57,6 +54,9 @@ export class ModalsService {
   $modalCrearHistorial = new EventEmitter<any>();
   $modalModificarHistorial = new EventEmitter<any>();
   $modalEliminarHistorial = new EventEmitter<any>();
+
+  // Inicio
+  $modalRegistrarAtencion = new EventEmitter<any>();
 
   constructor() { }
   

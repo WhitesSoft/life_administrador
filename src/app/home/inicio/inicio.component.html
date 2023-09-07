@@ -1,10 +1,10 @@
-<div class="bg-sidebar-color m-8 p-8 max-w-full">
+<div class="max-w-full p-8 m-8 bg-sidebar-color">
 
   <!-- Buscador -->
-  <div class="bg-body-color flex items-center w-1/4 rounded-md px-4 py-2">
-    <i class="bi bi-search text-lg mr-2"></i>
+  <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
+    <i class="mr-2 text-lg bi bi-search"></i>
     <input placeholder="Buscar" name="search" id="search"
-      class="text-base text-text-color font-medium w-full bg-transparent focus:outline-none">
+      class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
   </div>
 
   <div class="flex items-center justify-between mt-3 mb-3">
@@ -12,8 +12,8 @@
     <span class="font-semibold text-text-color">Próximas citas</span>
 
     <!-- Registrar atencion -->
-    <button class="font-semibold text-white bg-primary-color hover:bg-primary-color-dark rounded-md p-2"
-      data-bs-toggle="modal" data-bs-target="#modalEvento">
+    <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+      data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('crear')">
       Registrar atención
     </button>
   </div>
@@ -41,7 +41,7 @@
         [dayStartMinute]="0"
         [dayEndHour]="19"
         [dayEndMinute]="30"
-        (eventClicked)="eventClicked($event)"
+        
       >
       </mwl-calendar-day-view>
     </div>
@@ -49,6 +49,6 @@
 
 </div>
 
-<div *ngIf="modalOpen == true">
-  <app-modal-inicio></app-modal-inicio>
+<div *ngIf="modalOpenRegistraAtencion == true">
+  <app-registrar-atencion></app-registrar-atencion>
 </div>

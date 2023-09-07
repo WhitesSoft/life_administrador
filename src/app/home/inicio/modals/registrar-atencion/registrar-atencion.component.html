@@ -13,7 +13,7 @@
             <!-- Contenido -->
             <div class="p-5 modal-wrapper-flex">
 
-                <h4 class="mb-4 text-2xl font-semibold text-center">Registrar nuevo personal</h4>
+                <h4 class="mb-4 text-2xl font-semibold text-center">Registrar atencion</h4>
 
                 <!-- Cabeza -->
                 <div class="flex items-center justify-center gap-4 p-3 border-gray-800 rounded-md border-1">
@@ -68,82 +68,15 @@
                             </div>
                         </div>
 
-                        <!-- Input telefono -->
+                        <!-- Input fecha atencion -->
                         <div class="form__group">
                             <div class="relative">
-                                <input type="number" id="telefono" class="block peer" placeholder=" "
-                                    formControlName="telefono" />
-                                <label for="telefono"
+                                <input type="date" id="fatencion" class="block peer" placeholder=" "
+                                    formControlName="fatencion" />
+                                <label for="fatencion"
                                     class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
-                                    Telefono
+                                    Fecha de atencion
                                 </label>
-                            </div>
-                        </div>
-
-                        <!-- Input fecha nacimiento -->
-                        <div class="form__group">
-                            <div class="relative">
-                                <input type="date" id="fnacimiento" class="block peer" placeholder=" "
-                                    formControlName="fnacimiento" />
-                                <label for="fnacimiento"
-                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
-                                    Fecha de nacimiento
-                                </label>
-                            </div>
-                        </div>
-
-                        
-                        <!-- Input sexo -->
-                        <div class="flex items-center justify-center border-2 border-gray-300 rounded-md form__group">
-                            <div class="relative">
-                                <span
-                                    class="mb-1 text-sm bg-white px-2 text-gray-500 absolute top-[-4px] left-1 z-10 origin-[0] -translate-y-4 scale-95 transform">Sexo</span>
-                                <ul
-                                    class="flex w-full h-full m-auto text-sm font-medium text-gray-400 ">
-                                    <li class="w-full ml-[-20px] ">
-                                        <div class="flex items-center">
-                                            <input id="rmasculino" type="radio" value="" formControlName="rmasculino"
-                                                name="list-radio">
-                                            <label for="rmasculino"
-                                                class="w-full ml-2 text-sm font-medium text-gray-500">Masculino</label>
-                                        </div>
-                                    </li>
-                                    <li class="w-full ">
-                                        <div class="flex items-center px-2">
-                                            <input id="rfemenino" type="radio" value="" formControlName="rfemenino"
-                                                name="list-radio">
-                                            <label for="rfemenino"
-                                                class="w-full ml-2 text-sm font-medium text-gray-500">Femenino</label>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Input correo electronico -->
-                        <div class="form__group">
-                            <div class="relative">
-                                <input type="text" id="correo" class="block peer" placeholder=" "
-                                    formControlName="correo" />
-                                <label for="correo"
-                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
-                                    Correo electronico
-                                </label>
-                            </div>
-                        </div>
-
-                         <!-- Input rol -->
-                         <div class="form__group">
-                            <div class="relative">
-                                <button
-                                    class="text-gray-500 rounded-md border-2 border-gray-300 bg-white  focus:ring-2 focus:ring-primary-color font-medium  text-sm px-4 py-2.5 text-center inline-flex items-center"
-                                    type="button" data-dropdown-toggle="dropdown">Seleccione un rol<svg
-                                        class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
                             </div>
                         </div>
 
