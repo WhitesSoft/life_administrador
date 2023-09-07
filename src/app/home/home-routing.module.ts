@@ -6,6 +6,7 @@ import { NotificacionesComponent } from './notificaciones/notificaciones.compone
 import { PagosComponent } from './pagos/pagos.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
+import { ReportesComponent } from './reportes/reportes.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'pagos', component: PagosComponent },
   { path: 'personal', component: PersonalComponent },
   { path: 'proveedor', component: ProveedorComponent },
+  { path: 'reportes', component: ReportesComponent },
 ];
 
 @NgModule({
