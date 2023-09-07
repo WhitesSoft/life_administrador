@@ -24,6 +24,11 @@ import { CrearPersonalComponent } from './personal/modals/crear-personal/crear-p
 import { ModificarPersonalComponent } from './personal/modals/modificar-personal/modificar-personal.component';
 import { EliminarPersonalComponent } from './personal/modals/eliminar-personal/eliminar-personal.component';
 import { DetallePersonalComponent } from './personal/modals/detalle-personal/detalle-personal.component';
+import { ProveedorComponent } from './proveedor/proveedor.component';
+import { DetalleProveedorComponent } from './proveedor/modals/detalle-proveedor/detalle-proveedor.component';
+import { CrearProveedorComponent } from './proveedor/modals/crear-proveedor/crear-proveedor.component';
+import { ModificarProveedorComponent } from './proveedor/modals/modificar-proveedor/modificar-proveedor.component';
+import { EliminarProveedorComponent } from './proveedor/modals/eliminar-proveedor/eliminar-proveedor.component';
 
 
 
@@ -50,6 +55,11 @@ import { DetallePersonalComponent } from './personal/modals/detalle-personal/det
     ModificarPersonalComponent,
     EliminarPersonalComponent,
     DetallePersonalComponent,
+    ProveedorComponent,
+    DetalleProveedorComponent,
+    CrearProveedorComponent,
+    ModificarProveedorComponent,
+    EliminarProveedorComponent,
   ],
   imports: [
     CommonModule,
