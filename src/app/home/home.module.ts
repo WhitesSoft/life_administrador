@@ -39,6 +39,9 @@ import { ModificarTurnoComponent } from './turnos/modals/modificar-turno/modific
 import { EliminarTurnoComponent } from './turnos/modals/eliminar-turno/eliminar-turno.component';
 import { InventarioComponent } from './inventario/inventario.component';
 import { RegistrarComponent } from './inventario/modals/registrar/registrar.component';
+import { HorarioComponent } from './horario/horario.component';
+import { CrearHorarioComponent } from './horario/modals/crear-horario/crear-horario.component';
+import { ModificarHorarioComponent } from './horario/modals/modificar-horario/modificar-horario.component';
 
 
 
@@ -80,6 +83,9 @@ import { RegistrarComponent } from './inventario/modals/registrar/registrar.comp
     EliminarTurnoComponent,
     InventarioComponent,
     RegistrarComponent,
+    HorarioComponent,
+    CrearHorarioComponent,
+    ModificarHorarioComponent,
   ],
   imports: [
     CommonModule,
