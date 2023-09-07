@@ -39,6 +39,13 @@ export class ModalsService {
   $modalReporteSemanal = new EventEmitter<any>();
   $modalReporteMensual = new EventEmitter<any>();
 
+  // Turnos
+  $modalDetalleTurno = new EventEmitter<any>();
+  $modalCrearTurno = new EventEmitter<any>();
+  $modalModificarTurno = new EventEmitter<any>();
+  $modalEliminarTurno = new EventEmitter<any>();
+
+
   constructor() { }
   
 }
