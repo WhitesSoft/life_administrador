@@ -8,6 +8,7 @@ import { PersonalComponent } from './personal/personal.component';
 import { ProveedorComponent } from './proveedor/proveedor.component';
 import { ReportesComponent } from './reportes/reportes.component';
 import { TurnosComponent } from './turnos/turnos.component';
+import { InventarioComponent } from './inventario/inventario.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'proveedor', component: ProveedorComponent },
   { path: 'reportes', component: ReportesComponent },
   { path: 'turnos', component: TurnosComponent },
+  { path: 'inventario', component: InventarioComponent },
 ];
 
 @NgModule({
