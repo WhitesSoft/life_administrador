@@ -17,6 +17,13 @@ import { CrearNotificacionComponent } from './notificaciones/modals/crear-notifi
 import { PagosComponent } from './pagos/pagos.component';
 import { RealizarPagoComponent } from './pagos/modals/realizar-pago/realizar-pago.component';
 import { EmitirFacturaComponent } from './pagos/modals/emitir-factura/emitir-factura.component';
+import { PersonalComponent } from './personal/personal.component';
+import { PagosPersonalComponent } from './personal/modals/pagos-personal/pagos-personal.component';
+import { ControlarAsistenciaComponent } from './personal/modals/controlar-asistencia/controlar-asistencia.component';
+import { CrearPersonalComponent } from './personal/modals/crear-personal/crear-personal.component';
+import { ModificarPersonalComponent } from './personal/modals/modificar-personal/modificar-personal.component';
+import { EliminarPersonalComponent } from './personal/modals/eliminar-personal/eliminar-personal.component';
+import { DetallePersonalComponent } from './personal/modals/detalle-personal/detalle-personal.component';
 
 
 
@@ -36,6 +43,13 @@ import { EmitirFacturaComponent } from './pagos/modals/emitir-factura/emitir-fac
     PagosComponent,
     RealizarPagoComponent,
     EmitirFacturaComponent,
+    PersonalComponent,
+    PagosPersonalComponent,
+    ControlarAsistenciaComponent,
+    CrearPersonalComponent,
+    ModificarPersonalComponent,
+    EliminarPersonalComponent,
+    DetallePersonalComponent,
   ],
   imports: [
     CommonModule,

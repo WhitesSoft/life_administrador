@@ -21,6 +21,14 @@ export class ModalsService {
   $modalRealizarPago = new EventEmitter<any>();
   $modalEmitirFactura = new EventEmitter<any>();
 
+  // Personal
+  $modalDetallePersonal = new EventEmitter<any>();
+  $modalCrearPersonal = new EventEmitter<any>();
+  $modalModificarPersonal = new EventEmitter<any>();
+  $modalEliminarPersonal = new EventEmitter<any>();
+  $modalControlarAsistencia = new EventEmitter<any>();
+  $modalPagosPersonal = new EventEmitter<any>();
+
   constructor() { }
   
 }
