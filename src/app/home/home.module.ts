@@ -37,6 +37,8 @@ import { CrearTurnoComponent } from './turnos/modals/crear-turno/crear-turno.com
 import { DetalleTurnoComponent } from './turnos/modals/detalle-turno/detalle-turno.component';
 import { ModificarTurnoComponent } from './turnos/modals/modificar-turno/modificar-turno.component';
 import { EliminarTurnoComponent } from './turnos/modals/eliminar-turno/eliminar-turno.component';
+import { InventarioComponent } from './inventario/inventario.component';
+import { RegistrarComponent } from './inventario/modals/registrar/registrar.component';
 
 
 
@@ -76,6 +78,8 @@ import { EliminarTurnoComponent } from './turnos/modals/eliminar-turno/eliminar-
     DetalleTurnoComponent,
     ModificarTurnoComponent,
     EliminarTurnoComponent,
+    InventarioComponent,
+    RegistrarComponent,
   ],
   imports: [
     CommonModule,

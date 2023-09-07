@@ -45,6 +45,9 @@ export class ModalsService {
   $modalModificarTurno = new EventEmitter<any>();
   $modalEliminarTurno = new EventEmitter<any>();
 
+  // Inventario
+  $modalRegistroInventario = new EventEmitter<any>();
+
 
   constructor() { }
   
