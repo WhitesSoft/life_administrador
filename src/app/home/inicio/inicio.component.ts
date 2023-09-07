@@ -32,19 +32,26 @@ export class InicioComponent {
     },
   ];
 
-  modalOpen = false
+  modalOpenRegistraAtencion = false
 
   constructor(private modalService: ModalsService) { }
 
   ngOnInit() {
     // Escuchamos el observable
-    this.modalService.$modalRegistrarPaciente.subscribe((data) => { this.modalOpen = data })
+    this.modalService.$modalRegistrarAtencion.subscribe((data) => { this.modalOpenRegistraAtencion = data })
   }
 
-  eventClicked({ event }: { event: CalendarEvent }): void {
-    console.log('Event clicked', event.title);
-    this.modalOpen = true
-    console.log(this.modalOpen);
+  openModal(tipo: String) {
+  
+    if (tipo === 'crear')
+      this.modalOpenRegistraAtencion = true
+
   }
+
+  // eventClicked({ event }: { event: CalendarEvent }): void {
+  //   console.log('Event clicked', event.title);
+  //   this.modalOpenRegistraAtencion = true
+  //   console.log(this.modalOpen);
+  // }
 
 }
