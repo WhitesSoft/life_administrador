@@ -52,6 +52,12 @@ export class ModalsService {
   $modalCrearHorario = new EventEmitter<any>();
   $modalModificarHorario = new EventEmitter<any>();
 
+  // Historiales clinicos
+  $modalDetalleHistorial = new EventEmitter<any>();
+  $modalCrearHistorial = new EventEmitter<any>();
+  $modalModificarHistorial = new EventEmitter<any>();
+  $modalEliminarHistorial = new EventEmitter<any>();
+
   constructor() { }
   
 }
