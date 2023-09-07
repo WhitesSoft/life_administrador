@@ -12,6 +12,7 @@ import { FormularioPacienteComponent } from './pacientes/modals/formulario-pacie
 import { DetallePacienteComponent } from './pacientes/modals/detalle-paciente/detalle-paciente.component';
 import { EliminarPacienteComponent } from './pacientes/modals/eliminar-paciente/eliminar-paciente.component';
 import { ModificarFormularioPacienteComponent } from './pacientes/modals/modificar-formulario-paciente/modificar-formulario-paciente.component';
+import { NotificacionesComponent } from './notificaciones/notificaciones.component';
 
 
 
@@ -26,6 +27,7 @@ import { ModificarFormularioPacienteComponent } from './pacientes/modals/modific
     DetallePacienteComponent,
     EliminarPacienteComponent,
     ModificarFormularioPacienteComponent,
+    NotificacionesComponent,
   ],
   imports: [
     CommonModule,
