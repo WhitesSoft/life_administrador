@@ -14,8 +14,8 @@ export class DashboardComponent {
   menuItems = [
     { title: "Inicio", iconClass: "bi-house", routerLink: "/dashboard/inicio" },
     { title: "Turnos", iconClass: "bi-calendar-week", routerLink: "/dashboard/turnos" },
-    { title: "Historiales", iconClass: "bi-file-medical", routerLink: "/inicio" },
     { title: "Pacientes", iconClass: "bi-file-earmark-person", routerLink: "/dashboard/pacientes" },
+    { title: "Historiales", iconClass: "bi-file-medical", routerLink: "/dashboard/historiales" },
     { title: "Notificaciones", iconClass: "bi-bell-fill", routerLink: "/dashboard/notificaciones" },
     { title: "Pagos", iconClass: "bi-currency-dollar", routerLink: "/dashboard/pagos" },
     { title: "Personal", iconClass: "bi-person-vcard", routerLink: "/dashboard/personal" },

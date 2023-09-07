@@ -42,6 +42,11 @@ import { RegistrarComponent } from './inventario/modals/registrar/registrar.comp
 import { HorarioComponent } from './horario/horario.component';
 import { CrearHorarioComponent } from './horario/modals/crear-horario/crear-horario.component';
 import { ModificarHorarioComponent } from './horario/modals/modificar-horario/modificar-horario.component';
+import { HistorialesComponent } from './historiales/historiales.component';
+import { CrearHistorialComponent } from './historiales/modals/crear-historial/crear-historial.component';
+import { DetalleHistorialComponent } from './historiales/modals/detalle-historial/detalle-historial.component';
+import { ModificarHistorialComponent } from './historiales/modals/modificar-historial/modificar-historial.component';
+import { EliminarHistorialComponent } from './historiales/modals/eliminar-historial/eliminar-historial.component';
 
 
 
@@ -86,6 +91,11 @@ import { ModificarHorarioComponent } from './horario/modals/modificar-horario/mo
     HorarioComponent,
     CrearHorarioComponent,
     ModificarHorarioComponent,
+    HistorialesComponent,
+    CrearHistorialComponent,
+    DetalleHistorialComponent,
+    ModificarHistorialComponent,
+    EliminarHistorialComponent,
   ],
   imports: [
     CommonModule,
