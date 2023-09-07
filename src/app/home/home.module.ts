@@ -32,6 +32,11 @@ import { EliminarProveedorComponent } from './proveedor/modals/eliminar-proveedo
 import { ReportesComponent } from './reportes/reportes.component';
 import { ReporteMensualComponent } from './reportes/modals/reporte-mensual/reporte-mensual.component';
 import { ReporteSemanalComponent } from './reportes/modals/reporte-semanal/reporte-semanal.component';
+import { TurnosComponent } from './turnos/turnos.component';
+import { CrearTurnoComponent } from './turnos/modals/crear-turno/crear-turno.component';
+import { DetalleTurnoComponent } from './turnos/modals/detalle-turno/detalle-turno.component';
+import { ModificarTurnoComponent } from './turnos/modals/modificar-turno/modificar-turno.component';
+import { EliminarTurnoComponent } from './turnos/modals/eliminar-turno/eliminar-turno.component';
 
 
 
@@ -66,6 +71,11 @@ import { ReporteSemanalComponent } from './reportes/modals/reporte-semanal/repor
     ReportesComponent,
     ReporteMensualComponent,
     ReporteSemanalComponent,
+    TurnosComponent,
+    CrearTurnoComponent,
+    DetalleTurnoComponent,
+    ModificarTurnoComponent,
+    EliminarTurnoComponent,
   ],
   imports: [
     CommonModule,

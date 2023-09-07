@@ -13,7 +13,7 @@ export class DashboardComponent {
 
   menuItems = [
     { title: "Inicio", iconClass: "bi-house", routerLink: "/dashboard/inicio" },
-    // { title: "Horarios", iconClass: "bi-calendar-week", routerLink: "/inicio" },
+    { title: "Turnos", iconClass: "bi-calendar-week", routerLink: "/dashboard/turnos" },
     // { title: "Historiales", iconClass: "bi-file-medical", routerLink: "/inicio" },
     { title: "Pacientes", iconClass: "bi-file-earmark-person", routerLink: "/dashboard/pacientes" },
     { title: "Notificaciones", iconClass: "bi-bell-fill", routerLink: "/dashboard/notificaciones" },
