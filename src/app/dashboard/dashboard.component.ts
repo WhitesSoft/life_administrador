@@ -18,6 +18,7 @@ export class DashboardComponent {
     { title: "Pacientes", iconClass: "bi-file-earmark-person", routerLink: "/dashboard/pacientes" },
     { title: "Notificaciones", iconClass: "bi-bell-fill", routerLink: "/dashboard/notificaciones" },
     { title: "Pagos", iconClass: "bi-currency-dollar", routerLink: "/dashboard/pagos" },
+    { title: "Personal", iconClass: "bi-person-vcard", routerLink: "/dashboard/personal" },
     // { title: "Opciones", iconClass: "bi-gear", routerLink: "" },
     { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/login" },
   ]
