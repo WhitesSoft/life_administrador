@@ -29,6 +29,9 @@ import { DetalleProveedorComponent } from './proveedor/modals/detalle-proveedor/
 import { CrearProveedorComponent } from './proveedor/modals/crear-proveedor/crear-proveedor.component';
 import { ModificarProveedorComponent } from './proveedor/modals/modificar-proveedor/modificar-proveedor.component';
 import { EliminarProveedorComponent } from './proveedor/modals/eliminar-proveedor/eliminar-proveedor.component';
+import { ReportesComponent } from './reportes/reportes.component';
+import { ReporteMensualComponent } from './reportes/modals/reporte-mensual/reporte-mensual.component';
+import { ReporteSemanalComponent } from './reportes/modals/reporte-semanal/reporte-semanal.component';
 
 
 
@@ -60,6 +63,9 @@ import { EliminarProveedorComponent } from './proveedor/modals/eliminar-proveedo
     CrearProveedorComponent,
     ModificarProveedorComponent,
     EliminarProveedorComponent,
+    ReportesComponent,
+    ReporteMensualComponent,
+    ReporteSemanalComponent,
   ],
   imports: [
     CommonModule,

@@ -35,6 +35,10 @@ export class ModalsService {
   $modalModificarProveedor = new EventEmitter<any>();
   $modalEliminarProveedor = new EventEmitter<any>();
 
+  // Reportes
+  $modalReporteSemanal = new EventEmitter<any>();
+  $modalReporteMensual = new EventEmitter<any>();
+
   constructor() { }
   
 }

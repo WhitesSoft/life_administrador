@@ -20,6 +20,7 @@ export class DashboardComponent {
     { title: "Pagos", iconClass: "bi-currency-dollar", routerLink: "/dashboard/pagos" },
     { title: "Personal", iconClass: "bi-person-vcard", routerLink: "/dashboard/personal" },
     { title: "Proveedores", iconClass: "bi-person-gear", routerLink: "/dashboard/proveedor" },
+    { title: "Reportes", iconClass: "bi-flag-fill", routerLink: "/dashboard/reportes" },
     // { title: "Opciones", iconClass: "bi-gear", routerLink: "" },
     { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/login" },
   ]

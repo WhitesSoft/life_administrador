@@ -1,0 +1,126 @@
+<!-- Contenedor global del modal -->
+<div class="fixed inset-0 z-50">
+
+    <!-- Caracteristicas del modal -->
+    <div class="flex items-center justify-center min-h-screen">
+  
+      <!-- Oscurecer pantalla al abrir modal -->
+      <div class="fixed inset-0 bg-gray-600 bg-opacity-75 modal-bg-container"></div>
+  
+      <!-- Contenido del modal -->
+      <div class="overflow-hidden transition-all transform rounded-md shadow-xl modal-container bg-sidebar-color">
+  
+        <!-- Contenido -->
+        <div class="p-5 modal-wrapper-flex">
+  
+          <h4 class="mb-4 text-2xl font-semibold text-center">Reporte mensual</h4>
+  
+          <div class="flex-col px-8 py-8 bg-white rounded-lg dark:bg-night-700 sm:flex-row">
+            <!-- Card Header -->
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex-col">
+                <div class="flex items-center space-x-1">
+                  <span class="text-lg font-semibold text-gray-400 dark:text-night-300">$</span>
+                  <span class="text-4xl font-semibold text-gray-900 ">3,274.94</span>
+                  <div
+                    class="flex items-center py-1 pl-1 pr-2 text-xs font-semibold text-green-500 rounded-md bg-green-500/25">
+                    <!-- <svg-icon src="assets/icons/outline/arrow-sm-up.svg" [svgClass]="'h-4 w-4'"></svg-icon> -->
+                    9.2%
+                  </div>
+                </div>
+                <span class="text-sm text-gray-400 dark:text-night-300">Reporte</span>
+              </div>
+              <div
+                class="px-1 py-1 text-xs text-center text-gray-500 bg-gray-100 rounded-sm cursor-pointer hover:bg-primary-500/25 hover:text-primary-500 dark:bg-night-500 dark:text-night-300 dark:hover:bg-primary-500/25 dark:hover:text-primary-500">
+                <!-- <svg-icon src="assets/icons/outline/dots-horizontal.svg" [svgClass]="'h-3 w-3'"></svg-icon> -->
+              </div>
+            </div>
+            <!-- end Card Header -->
+            <div class="flex items-center justify-between mb-3">
+              <div class="px-4 py-2 text-sm text-white rounded-md cursor-pointer bg-primary-color">1m</div>
+            </div>
+            <!-- Card Body -->
+            <!-- <apx-chart
+                    [series]="chartOptions.series!"
+                    [chart]="chartOptions.chart!"
+                    [legend]="chartOptions.legend!"
+                    [dataLabels]="chartOptions.dataLabels!"
+                    [fill]="chartOptions.fill!"
+                    [stroke]="chartOptions.stroke!"
+                    [xaxis]="chartOptions.xaxis!"
+                    [yaxis]="chartOptions.yaxis!"
+                    [states]="chartOptions.states!"
+                    [tooltip]="chartOptions.tooltip!"
+                    [colors]="chartOptions.colors!"
+                    [grid]="chartOptions.grid!"
+                    [title]="chartOptions.title!">
+                  </apx-chart> -->
+            <!-- end Chart -->
+  
+            <!--Table-->
+            <table class="w-full mt-2 text-sm table-auto">
+              <!--begin::Table head-->
+              <thead>
+                <tr>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <!--end::Table head-->
+              <!--begin::Table body-->
+              <tbody>
+                <tr>
+                  <td class="py-2">
+                    <a class="text-sm font-semibold text-gray-400 dark:text-night-400">2:30 PM</a>
+                  </td>
+                  <td class="py-2 text-right">
+                    <span class="text-sm font-semibold text-gray-800 dark:text-night-100">$2,756.26</span>
+                  </td>
+                  <td class="py-2 text-right">
+                    <span class="text-sm font-semibold text-rose-600">-139.34</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2">
+                    <a class="text-sm font-semibold text-gray-400 dark:text-night-400">3:10 PM</a>
+                  </td>
+                  <td class="py-2 text-right">
+                    <span class="text-sm font-semibold text-gray-800 dark:text-night-100">$3,207.03</span>
+                  </td>
+                  <td class="py-2 text-right">
+                    <span class="text-sm font-semibold text-green-500">+576.24</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="py-2">
+                    <a class="text-sm font-semibold text-gray-400 dark:text-night-400">3:55 PM</a>
+                  </td>
+                  <td class="py-2 text-right">
+                    <span class="text-sm font-semibold text-gray-800 dark:text-night-100">$3,274.94</span>
+                  </td>
+                  <td class="py-2 text-right">
+                    <span class="text-sm font-semibold text-green-500">+124.03</span>
+                  </td>
+                </tr>
+              </tbody>
+              <!--end::Table body-->
+            </table>
+            <!--end Table-->
+          </div>
+        </div>
+  
+        <!-- Botones -->
+        <div class="flex flex-row-reverse gap-4 px-4 py-3 bg-body-color">
+          <button
+            class="w-full px-3 py-2 font-medium text-white border border-gray-800 rounded-md shadow-md bg-primary-color hover:bg-primary-color-dark"
+            (click)="closeModal()">
+            Cerrar
+          </button>
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
