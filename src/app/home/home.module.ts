@@ -13,6 +13,10 @@ import { DetallePacienteComponent } from './pacientes/modals/detalle-paciente/de
 import { EliminarPacienteComponent } from './pacientes/modals/eliminar-paciente/eliminar-paciente.component';
 import { ModificarFormularioPacienteComponent } from './pacientes/modals/modificar-formulario-paciente/modificar-formulario-paciente.component';
 import { NotificacionesComponent } from './notificaciones/notificaciones.component';
+import { CrearNotificacionComponent } from './notificaciones/modals/crear-notificacion/crear-notificacion.component';
+import { PagosComponent } from './pagos/pagos.component';
+import { RealizarPagoComponent } from './pagos/modals/realizar-pago/realizar-pago.component';
+import { EmitirFacturaComponent } from './pagos/modals/emitir-factura/emitir-factura.component';
 
 
 
@@ -28,6 +32,10 @@ import { NotificacionesComponent } from './notificaciones/notificaciones.compone
     EliminarPacienteComponent,
     ModificarFormularioPacienteComponent,
     NotificacionesComponent,
+    CrearNotificacionComponent,
+    PagosComponent,
+    RealizarPagoComponent,
+    EmitirFacturaComponent,
   ],
   imports: [
     CommonModule,
