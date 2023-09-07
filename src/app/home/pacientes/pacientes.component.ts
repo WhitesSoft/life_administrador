@@ -13,13 +13,13 @@ export class PacientesComponent {
     ['Marco', 'Cardozo', 'Izurza', '45454552']
   ]
 
-  constructor(private modalService: ModalsService) { }
-
   // Estados modal
   modalOpenDetallePaciente = false
   modalOpenCrearPaciente = false
   modalOpenModificarPaciente = false
   modalOpenEliminarPaciente = false
+
+  constructor(private modalService: ModalsService) { }
 
   ngOnInit() {
     // Escuchamos el observable del modal

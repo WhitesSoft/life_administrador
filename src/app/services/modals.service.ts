@@ -14,6 +14,13 @@ export class ModalsService {
   $modalModificarPaciente = new EventEmitter<any>();
   $modalEliminarPaciente = new EventEmitter<any>();
 
+  // Notificacion
+  $modalCrearNotificacion = new EventEmitter<any>();
+
+  // Pagos
+  $modalRealizarPago = new EventEmitter<any>();
+  $modalEmitirFactura = new EventEmitter<any>();
+
   constructor() { }
   
 }

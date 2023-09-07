@@ -1,6 +1,6 @@
 <div class="max-w-full p-8 m-8 bg-sidebar-color">
 
-    <div class="flex items-center justify-between mt-3 mb-3">
+    <div class="flex items-center gap-2 mt-3 mb-3">
         <!-- Buscador -->
         <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
             <i class="mr-2 text-lg bi bi-search"></i>
@@ -8,10 +8,19 @@
                 class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
         </div>
 
-        <!-- Crear notificacion-->
+        <div class="flex-1">
+        </div>
+
+        <!-- Realizar pago -->
         <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('crear')">
-            Crear notificación
+            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('pago')">
+            Realizar pago
+        </button>
+
+        <!-- Emitir factura -->
+        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('factura')">
+            Emitir factura
         </button>
     </div>
 
@@ -26,25 +35,33 @@
                             <tr>
                                 <th scope="col"
                                     class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Notificación</span>
+                                    <span>Paciente</span>
                                 </th>
 
                                 <th scope="col"
                                     class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Paciente</span>
+                                    <span>Monto</span>
                                 </th>
-                               
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Fecha</span>
+                                </th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-700 bg-sidebar-color">
 
-                            <tr *ngFor="let notificacion of notificaciones">
+                            <tr *ngFor="let pago of pagos">
                                 <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ notificacion[0] }}
+                                    {{ pago[0] }}
                                 </td>
 
                                 <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ notificacion[1] }}
+                                    {{ pago[1] }}
+                                </td>
+
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                                    {{ pago[2] }}
                                 </td>
                             </tr>
 
@@ -55,12 +72,13 @@
             </div>
         </div>
     </div>
-
 </div>
 
 
-<div *ngIf="modalOpenCrearNotificacion == true">
-    <app-crear-notificacion></app-crear-notificacion>
+<div *ngIf="modalOpenRealizarPago == true">
+    <app-realizar-pago></app-realizar-pago>
 </div>
 
-
+<div *ngIf="modalOpenEmitirFactura == true">
+    <app-emitir-factura></app-emitir-factura>
+</div>
