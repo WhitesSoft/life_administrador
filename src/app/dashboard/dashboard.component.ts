@@ -19,6 +19,7 @@ export class DashboardComponent {
     { title: "Notificaciones", iconClass: "bi-bell-fill", routerLink: "/dashboard/notificaciones" },
     { title: "Pagos", iconClass: "bi-currency-dollar", routerLink: "/dashboard/pagos" },
     { title: "Personal", iconClass: "bi-person-vcard", routerLink: "/dashboard/personal" },
+    { title: "Proveedores", iconClass: "bi-person-gear", routerLink: "/dashboard/proveedor" },
     // { title: "Opciones", iconClass: "bi-gear", routerLink: "" },
     { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/login" },
   ]

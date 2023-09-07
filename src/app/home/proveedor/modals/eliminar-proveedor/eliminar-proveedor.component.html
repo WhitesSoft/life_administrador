@@ -1,0 +1,49 @@
+<!-- Contenedor global del modal -->
+<div class="fixed inset-0 z-50">
+
+    <!-- Caracteristicas del modal -->
+    <div class="flex items-center justify-center min-h-screen">
+
+        <!-- Oscurecer pantalla al abrir modal -->
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75 modal-bg-container"></div>
+
+        <!-- Contenido del modal -->
+        <div class="overflow-hidden transition-all transform rounded-md shadow-xl modal-container bg-sidebar-color">
+
+            <!-- Contenido -->
+            <div class="p-5 modal-wrapper-flex">
+
+                <div class="flex items-start justify-center flex-shrink-0 w-12 h-12 mx-auto bg-red-100 rounded-full">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="m-auto text-red-600 bi bi-exclamation-triangle-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                    </svg>
+                </div>
+
+                <h4 class="mt-4 mb-4 text-2xl font-semibold text-center">Eliminar proveedor</h4>
+
+                <div>
+                    <p>¿Estás seguro de eliminar este proveedor?</p>
+                </div>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex flex-row-reverse gap-4 px-4 py-3 bg-body-color">
+                <button
+                    class="w-full px-3 py-2 font-medium border border-gray-800 rounded-md shadow-md bg-sidebar-color text-text-color hover:bg-gray-200 "
+                    (click)="closeModal()">
+                    Cancelar
+                </button>
+
+                <button
+                    class="w-full px-3 py-2 font-medium text-white border border-gray-800 rounded-md shadow-md bg-primary-color hover:bg-primary-color-dark">
+                    Eliminar
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
