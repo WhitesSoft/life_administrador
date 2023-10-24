@@ -49,15 +49,15 @@
 
                             <tr *ngFor="let turno of turnos">
                                 <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ turno[0] }}
+                                    {{ turno.hora }}
                                 </td>
 
                                 <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ turno[1] }}
+                                    {{ turno.nombre }} {{ turno.apellido_paterno }} {{ turno.apellido_materno }}
                                 </td>
 
                                 <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ turno[2] }}
+                                    {{ turno.estado }}
                                 </td>
 
                                 <td class="px-4 py-4 text-sm whitespace-nowrap">

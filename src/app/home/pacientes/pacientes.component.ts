@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Paciente } from 'src/app/models/Paciente';
 import { ModalsService } from 'src/app/services/modals.service';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-pacientes',
@@ -8,10 +10,12 @@ import { ModalsService } from 'src/app/services/modals.service';
 })
 export class PacientesComponent {
 
-  pacientes: any = [
-    ['Juan', 'Montero', 'Poclaba', '75725762'],
-    ['Marco', 'Cardozo', 'Izurza', '45454552']
-  ]
+  // pacientes: any = [
+  //   ['Juan', 'Montero', 'Poclaba', '75725762'],
+  //   ['Marco', 'Cardozo', 'Izurza', '45454552']
+  // ]
+
+  pacientes: Paciente[] = []
 
   // Estados modal
   modalOpenDetallePaciente = false
@@ -19,7 +23,10 @@ export class PacientesComponent {
   modalOpenModificarPaciente = false
   modalOpenEliminarPaciente = false
 
-  constructor(private modalService: ModalsService) { }
+  constructor(
+    private modalService: ModalsService,
+    private pacienteService: PacienteService
+    ) { }
 
   ngOnInit() {
     // Escuchamos el observable del modal
@@ -27,6 +34,20 @@ export class PacientesComponent {
     this.modalService.$modalCrearPaciente.subscribe((data) => { this.modalOpenCrearPaciente = data })
     this.modalService.$modalModificarPaciente.subscribe((data) => { this.modalOpenModificarPaciente = data })
     this.modalService.$modalEliminarPaciente.subscribe((data) => { this.modalOpenEliminarPaciente = data })
+
+    // cargar lista
+    this.cargarLista()
+  }
+
+  cargarLista(){
+    this.pacienteService.listaPacientes().subscribe(
+      data => {
+        this.pacientes = data
+      },
+      err => {
+        console.log(err);
+      }
+    )
   }
 
   openModal(tipo: String) {
