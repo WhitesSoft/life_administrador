@@ -55,18 +55,30 @@ export class TurnosComponent {
     )
   }
 
-  openModal(tipo: String) {
-    if (tipo === 'ver')
+  openModal(tipo: String, idTurno?: number) {
+    if (tipo === 'ver') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenDetalleTurno = true
+    }
 
-    if (tipo === 'crear')
+
+    if (tipo === 'crear') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenCrearTurno = true
+    }
 
-    if (tipo === 'modificar')
+
+    if (tipo === 'modificar') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenModificarTurno = true
+    }
 
-    if (tipo === 'eliminar')
+
+    if (tipo === 'eliminar') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenEliminarTurno = true
+    }
+
   }
 
 

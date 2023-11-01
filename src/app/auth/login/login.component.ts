@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { LoginUsuario } from 'src/app/models/LoginUsuario';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -18,7 +19,9 @@ export class LoginComponent {
   constructor(
     private router: Router,
     private authService: AuthService,
-    private tokenService: TokenService) {
+    private tokenService: TokenService,
+    private toastr: ToastrService
+    ) {
 
   }
 
@@ -28,8 +31,6 @@ export class LoginComponent {
 
   login() {
 
-    console.log(this.usuario, this.password);
-
     this.loginUsuario = new LoginUsuario(this.usuario, this.password)
 
     this.authService.login(this.loginUsuario).subscribe(
@@ -38,10 +39,12 @@ export class LoginComponent {
         this.tokenService.setCorreo(data.correo.toString())
         this.tokenService.setToken(data.token.toString())
         this.tokenService.setRoles(data.roles)
+
+        this.toastr.success(`Bienvenido ${data.usuario.toString()}`)
         this.router.navigate(['/dashboard/inicio']);
       },
       err => {
-        console.log(err);
+        this.toastr.error(err.error.message)
       }
     )
 

@@ -12,14 +12,13 @@
     <span class="font-semibold text-text-color">Próximas citas</span>
 
     <!-- Registrar atencion -->
-    <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-      data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('crear')">
+    <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark">
       Registrar atención
     </button>
   </div>
 
   <!-- Calendario -->
-  <div>    
+  <div>
     <div [ngSwitch]="view">
       <mwl-calendar-month-view
         *ngSwitchCase="'month'"
@@ -39,9 +38,9 @@
         [events]="events"
         [dayStartHour]="8"
         [dayStartMinute]="0"
-        [dayEndHour]="19"
+        [dayEndHour]="20"
         [dayEndMinute]="30"
-        
+        (eventClicked)="eventClicked($event)"
       >
       </mwl-calendar-day-view>
     </div>

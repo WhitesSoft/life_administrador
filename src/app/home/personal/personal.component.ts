@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+import { Personal } from 'src/app/models/Personal';
 import { ModalsService } from 'src/app/services/modals.service';
+import { PersonalService } from 'src/app/services/personal.service';
+import { interval } from 'rxjs';
+import { startWith, switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-personal',
@@ -8,11 +12,7 @@ import { ModalsService } from 'src/app/services/modals.service';
 })
 export class PersonalComponent {
 
-  personal: any = [
-    ['Juan Montero'],
-    ['Marco Cardozo'],
-    ['Ruben Mealla'],
-  ]
+  personal: Personal[] = []
 
   // Estados modal
   modalOpenDetallePersonal = false
@@ -22,9 +22,13 @@ export class PersonalComponent {
   modalOpenControlarAsistencia = false
   modalOpenPagosPersonal = false
 
-  constructor(private modalService: ModalsService) { }
+  constructor(
+    private modalService: ModalsService,
+    private personalService: PersonalService
+    ) { }
 
   ngOnInit() {
+
     // Escuchamos el observable del modal
     this.modalService.$modalDetallePersonal.subscribe((data) => { this.modalOpenDetallePersonal = data })
     this.modalService.$modalCrearPersonal.subscribe((data) => { this.modalOpenCrearPersonal = data })
@@ -32,11 +36,32 @@ export class PersonalComponent {
     this.modalService.$modalEliminarPersonal.subscribe((data) => { this.modalOpenEliminarPersonal = data })
     this.modalService.$modalControlarAsistencia.subscribe((data) => { this.modalOpenControlarAsistencia = data })
     this.modalService.$modalPagosPersonal.subscribe((data) => { this.modalOpenPagosPersonal = data })
+
+    // cargar la lista
+    this.personalService.listaPersonal().subscribe(
+      data => this.personal = data,
+      err => console.log(err)
+    )
+
+    // interval(1000) // Cada 1000ms o 1 segundo
+    // .pipe(
+    //   startWith(0), // Para que se ejecute inmediatamente al iniciar
+    //   switchMap(() => this.personalService.listaPersonal())
+    // )
+    // .subscribe(
+    //   data => this.personal = data,
+    //   err => console.log(err)
+    // );
+
   }
 
-  openModal(tipo: String) {
-    if (tipo === 'ver')
+  openModal(tipo: String, idPersonal?: number) {
+
+    if (tipo === 'ver'){
+      this.modalService.$selectedPersonalId.next(idPersonal!)
       this.modalOpenDetallePersonal = true
+    }
+
 
     if (tipo === 'crear')
       this.modalOpenCrearPersonal = true
@@ -44,8 +69,11 @@ export class PersonalComponent {
     if (tipo === 'modificar')
       this.modalOpenModificarPersonal = true
 
-    if (tipo === 'eliminar')
+    if (tipo === 'eliminar'){
+      this.modalService.$selectedPersonalId.next(idPersonal!)
       this.modalOpenEliminarPersonal = true
+    }
+
 
     if (tipo === 'controlar')
       this.modalOpenControlarAsistencia = true

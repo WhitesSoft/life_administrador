@@ -2,7 +2,7 @@ import { Time } from "@angular/common"
 
 export class Turno {
 
-  id?: Number
+  id_turno?: number
   estado?: Boolean
   nombre?: String
   apellido_paterno?: String

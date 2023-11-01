@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { HistorialClinico } from 'src/app/models/HistorialClinico';
+import { HistorialClinicoService } from 'src/app/services/historial-clinico.service';
 import { ModalsService } from 'src/app/services/modals.service';
 
 @Component({
@@ -8,10 +10,7 @@ import { ModalsService } from 'src/app/services/modals.service';
 })
 export class HistorialesComponent {
 
-  historiales: any = [
-    ['Juan Montero'],
-    ['Marco Cardozo'],
-  ]
+  historiales: HistorialClinico[] = []
 
   // Estados modal
   modalOpenDetalleHistorial = false
@@ -19,7 +18,10 @@ export class HistorialesComponent {
   modalOpenModificarHistorial = false
   modalOpenEliminarHistorial = false
 
-  constructor(private modalService: ModalsService) { }
+  constructor(
+    private modalService: ModalsService,
+    private historialClinicoService: HistorialClinicoService
+  ) { }
 
   ngOnInit() {
     // Escuchamos el observable del modal
@@ -27,20 +29,43 @@ export class HistorialesComponent {
     this.modalService.$modalCrearHistorial.subscribe((data) => { this.modalOpenCrearHistorial = data })
     this.modalService.$modalModificarHistorial.subscribe((data) => { this.modalOpenModificarHistorial = data })
     this.modalService.$modalEliminarHistorial.subscribe((data) => { this.modalOpenEliminarHistorial = data })
+
+    // listar historiales
+    this.cargarLista()
   }
 
-  openModal(tipo: String) {
-    if (tipo === 'ver')
-      this.modalOpenDetalleHistorial = true
+  cargarLista() {
+    this.historialClinicoService.listaHistorialesClinicos().subscribe(
+      data => {
+        this.historiales = data
+      },
+      err => {
+        console.log(err.error.message);
+      }
+    )
+  }
 
-    if (tipo === 'crear')
+  openModal(tipo: String, idHistorial?: number) {
+
+    if (tipo === 'crear') {
       this.modalOpenCrearHistorial = true
+    }
 
-    if (tipo === 'modificar')
+    if (tipo === 'ver') {
+      this.modalService.$selectedHistorialId.next(idHistorial!)
+      this.modalOpenDetalleHistorial = true
+    }
+
+    if (tipo === 'modificar') {
+      this.modalService.$selectedHistorialId.next(idHistorial!)
       this.modalOpenModificarHistorial = true
+    }
 
-    if (tipo === 'eliminar')
+    if (tipo === 'eliminar') {
+      this.modalService.$selectedHistorialId.next(idHistorial!)
       this.modalOpenEliminarHistorial = true
+    }
+
   }
 
 }
