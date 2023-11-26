@@ -49,6 +49,7 @@ import { EliminarHistorialComponent } from './historiales/modals/eliminar-histor
 import { RegistrarAtencionComponent } from './inicio/modals/registrar-atencion/registrar-atencion.component';
 import { ModalsService } from '../services/modals.service';
 import { PacientesPipe } from '../pipes/pacientes.pipe';
+import { HistorialesPipe } from '../pipes/historiales.pipe';
 
 
 
@@ -96,7 +97,8 @@ import { PacientesPipe } from '../pipes/pacientes.pipe';
     ModificarHistorialComponent,
     EliminarHistorialComponent,
     RegistrarAtencionComponent,
-    PacientesPipe
+    PacientesPipe,
+    HistorialesPipe
   ],
   imports: [
     CommonModule,

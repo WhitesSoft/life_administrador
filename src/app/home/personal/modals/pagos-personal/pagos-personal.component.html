@@ -1,99 +1,85 @@
 <!-- Contenedor global del modal -->
 <div class="fixed inset-0 z-50">
 
-    <!-- Caracteristicas del modal -->
-    <div class="flex items-center justify-center min-h-screen">
+  <!-- Caracteristicas del modal -->
+  <div class="flex items-center justify-center min-h-screen">
 
-        <!-- Oscurecer pantalla al abrir modal -->
-        <div class="fixed inset-0 bg-gray-600 bg-opacity-75 modal-bg-container"></div>
+    <!-- Oscurecer pantalla al abrir modal -->
+    <div class="fixed inset-0 bg-gray-600 bg-opacity-75 modal-bg-container"></div>
 
-        <!-- Contenido del modal -->
-        <div class="overflow-hidden transition-all transform rounded-md shadow-xl modal-container bg-sidebar-color">
+    <!-- Contenido del modal -->
+    <div class="overflow-hidden transition-all transform rounded-md shadow-xl modal-container bg-sidebar-color">
 
-            <!-- Contenido -->
-            <div class="p-5 modal-wrapper-flex">
+      <!-- Contenido -->
+      <div class="p-5 modal-wrapper-flex">
 
-                <h4 class="mb-4 text-2xl font-semibold text-center">Pagos a un personal</h4>
+        <h4 class="mb-4 text-2xl font-semibold text-center">Pagos a un personal</h4>
 
-                <!-- Cabeza -->
-                <div class="flex items-center justify-center gap-4 p-3 border-gray-800 rounded-md border-1">
-                    <!-- Logo -->
-                    <img class="border-gray-800 rounded-full border-1" src="./assets/images/logo.png"
-                        style="width: 80px; height: 80px;" alt="dashboard widget" />
-                    <!-- Datos -->
-                    <div class="flex-1 m-auto">
-                        <h3 class="text-2xl font-semibold text-center">Dental Xperience</h3>
-                    </div>
-
-                </div>
-
-                <!-- Formulario -->
-                <form action="">
-
-                    <div class="grid grid-cols-3 gap-3 p-2 mt-2 border-gray-800 rounded-md border-1">
-
-                        <!-- Input personal -->
-                        <div class="form__group">
-                            <div class="relative">
-                                <button
-                                    class="text-gray-500 rounded-md border-2 border-gray-300 bg-white  focus:ring-2 focus:ring-primary-color font-medium  text-sm px-4 py-2.5 text-center inline-flex items-center"
-                                    type="button" data-dropdown-toggle="dropdown">Seleccione un personal<svg
-                                        class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                            d="M19 9l-7 7-7-7"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-
-
-                        <!-- Input fecha -->
-                        <div class="form__group">
-                            <div class="relative">
-                                <input type="date" id="fnacimiento" class="block peer" placeholder=" "
-                                    formControlName="fnacimiento" />
-                                <label for="fnacimiento"
-                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
-                                    Fecha
-                                </label>
-                            </div>
-                        </div>
-
-
-                        <!-- Input monto -->
-                        <div class="form__group">
-                            <div class="relative">
-                                <input type="number" id="monto" class="block peer" placeholder=" "
-                                    formControlName="monto" />
-                                <label for="monto"
-                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
-                                    Monto
-                                </label>
-                            </div>
-                        </div>
-
-                    </div>
-
-                </form>
-            </div>
-
-            <!-- Botones -->
-            <div class="flex flex-row-reverse gap-4 px-4 py-3 bg-body-color">
-                <button
-                    class="w-full px-3 py-2 font-medium border border-gray-800 rounded-md shadow-md bg-sidebar-color text-text-color hover:bg-gray-200"
-                    (click)="closeModal()">
-                    Cancelar
-                </button>
-
-                <button
-                    class="w-full px-3 py-2 font-medium text-white border border-gray-800 rounded-md shadow-md bg-primary-color hover:bg-primary-color-dark ">
-                    Pagar
-                </button>
-            </div>
+        <!-- Cabeza -->
+        <div class="flex items-center justify-center gap-4 p-3 border-gray-800 rounded-md border-1">
+          <!-- Logo -->
+          <img class="border-gray-800 rounded-full border-1" src="./assets/images/logo.png"
+            style="width: 80px; height: 80px;" alt="dashboard widget" />
+          <!-- Datos -->
+          <div class="flex-1 m-auto">
+            <h3 class="text-2xl font-semibold text-center">Dental Xperience</h3>
+          </div>
 
         </div>
 
+        <!-- Formulario -->
+        <form action="">
+
+          <div class="grid grid-cols-3 gap-3 p-2 mt-2 border-gray-800 rounded-md border-1">
+
+            <!-- Buscar personal -->
+            <div class="relative w-full col-span-3">
+
+              <input placeholder="Buscar personal..." type="text" name="src" (ngModelChange)="search($event)"
+                [(ngModel)]="src">
+
+              <ul
+                class="absolute z-50 w-full mt-1 overflow-y-auto rounded-md border-1 bg-sidebar-color border-primary-color max-h-60">
+                <li *ngFor="let item of personals"
+                  class="px-4 py-2 transition-colors border-b cursor-pointer text-text-color hover:bg-gray-100"
+                  (click)="onPersonalClick(item)">
+                  {{item.nombre}} {{item.apellido_paterno}} {{item.apellido_materno}}
+                </li>
+              </ul>
+
+            </div>
+
+            <!-- Input personal -->
+            <div class="relative w-full col-span-3">
+              <input type="text" class="block peer" [value]="personal?.nombre" placeholder=" " readonly />
+              <label
+                class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                Personal
+              </label>
+            </div>
+
+          </div>
+
+        </form>
+      </div>
+
+      <!-- Botones -->
+      <div class="flex flex-row-reverse gap-4 px-4 py-3 bg-body-color">
+        <button
+          class="w-full px-3 py-2 font-medium border border-gray-800 rounded-md shadow-md bg-sidebar-color text-text-color hover:bg-gray-200"
+          (click)="closeModal()">
+          Cancelar
+        </button>
+
+        <button
+          class="w-full px-3 py-2 font-medium text-white border border-gray-800 rounded-md shadow-md bg-primary-color hover:bg-primary-color-dark"
+          (click)="pagar()">
+          Pagar
+        </button>
+      </div>
+
     </div>
+
+  </div>
 
 </div>

@@ -25,7 +25,7 @@ export class PersonalComponent {
   constructor(
     private modalService: ModalsService,
     private personalService: PersonalService
-    ) { }
+  ) { }
 
   ngOnInit() {
 
@@ -57,23 +57,27 @@ export class PersonalComponent {
 
   openModal(tipo: String, idPersonal?: number) {
 
-    if (tipo === 'ver'){
+    if (tipo === 'ver') {
       this.modalService.$selectedPersonalId.next(idPersonal!)
       this.modalOpenDetallePersonal = true
     }
 
-
-    if (tipo === 'crear')
+    if (tipo === 'crear'){
       this.modalOpenCrearPersonal = true
+    }
 
-    if (tipo === 'modificar')
+
+    if (tipo === 'modificar') {
+      this.modalService.$selectedPersonalId.next(idPersonal!)
+      console.log(idPersonal);
+
       this.modalOpenModificarPersonal = true
+    }
 
-    if (tipo === 'eliminar'){
+    if (tipo === 'eliminar') {
       this.modalService.$selectedPersonalId.next(idPersonal!)
       this.modalOpenEliminarPersonal = true
     }
-
 
     if (tipo === 'controlar')
       this.modalOpenControlarAsistencia = true

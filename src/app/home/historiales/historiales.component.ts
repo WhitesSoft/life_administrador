@@ -11,6 +11,7 @@ import { ModalsService } from 'src/app/services/modals.service';
 export class HistorialesComponent {
 
   historiales: HistorialClinico[] = []
+  buscar = '';
 
   // Estados modal
   modalOpenDetalleHistorial = false

@@ -4,7 +4,7 @@
     <!-- Buscador -->
     <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
       <i class="mr-2 text-lg bi bi-search"></i>
-      <input placeholder="Buscar" name="search" id="search"
+      <input placeholder="Buscar" name="search" [(ngModel)]="buscar" id="search"
         class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
     </div>
 
@@ -47,10 +47,10 @@
             </thead>
             <tbody class="divide-y divide-gray-700 bg-sidebar-color">
 
-              <tr *ngFor="let paciente of pacientes">
+              <tr *ngFor="let paciente of pacientes | pacientes: buscar">
 
                 <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                  {{ paciente.nombre }} {{ paciente.id_paciente }}
+                  {{ paciente.nombre }}
                 </td>
 
                 <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">

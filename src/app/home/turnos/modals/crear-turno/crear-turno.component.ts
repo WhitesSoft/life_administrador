@@ -44,7 +44,6 @@ export class CrearTurnoComponent {
   }
 
   search(value: any): any {
-    //this.isLoading = true;
     if (value.trim()) {
       this.pacientes = this.allPacientes.filter(paciente =>
         paciente.nombre.toLowerCase().includes(value.toLowerCase()) ||
@@ -54,7 +53,6 @@ export class CrearTurnoComponent {
     } else {
       this.pacientes = []
     }
-    // this.isLoading = false
   }
 
   onPacienteClick(paciente: Paciente) {

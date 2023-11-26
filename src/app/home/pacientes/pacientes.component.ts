@@ -11,6 +11,7 @@ import { PacienteService } from 'src/app/services/paciente.service';
 export class PacientesComponent {
 
   pacientes: Paciente[] = []
+  buscar = '';
 
   // Estados modal
   modalOpenDetallePaciente = false
