@@ -17,7 +17,8 @@ export class ModalsService {
   $modalCrearNotificacion = new EventEmitter<any>();
 
   // Pagos
-  $modalRealizarPago = new EventEmitter<any>();
+  $selectedPagoId = new ReplaySubject<number>(1);
+  $modalVerPago = new EventEmitter<any>();
   $modalEmitirFactura = new EventEmitter<any>();
 
   // Personal

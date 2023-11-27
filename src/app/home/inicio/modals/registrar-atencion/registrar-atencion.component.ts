@@ -22,6 +22,7 @@ export class RegistrarAtencionComponent {
   apellidoPaterno = ''
   apellidoMaterno = ''
   fecha: Date
+  monto = ''
 
   constructor(
     private modalService: ModalsService,
@@ -49,7 +50,7 @@ export class RegistrarAtencionComponent {
   registrarAtencion() {
     this.turno!.estado = true
     const atencion = new Atencion(this.turno!.nombre, this.turno!.apellido_paterno, this.turno!.apellido_materno,
-       this.turno!.fecha)
+       this.turno!.fecha, Number(this.monto))
 
     console.log(atencion);
 

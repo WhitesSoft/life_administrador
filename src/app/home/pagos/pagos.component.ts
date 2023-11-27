@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { DetallePago } from 'src/app/models/DetallePago';
 import { ModalsService } from 'src/app/services/modals.service';
+import { PagoService } from 'src/app/services/pago.service';
 
 @Component({
   selector: 'app-pagos',
@@ -8,30 +10,45 @@ import { ModalsService } from 'src/app/services/modals.service';
 })
 export class PagosComponent {
 
-  pagos: any = [
-    ['Juan Montero', '123 Bs', '12/12/2012'],
-    ['Marco Cardozo', '123 Bs', '12/12/2012']
-  ]
+  detallePago: DetallePago[] = []
 
- // Estados modal
- modalOpenRealizarPago = false
- modalOpenEmitirFactura = false
+  // Estados modal
+  modalOpenVerPago = false
+  modalOpenEmitirFactura = false
 
- constructor(private modalService: ModalsService) { }
+  constructor(
+    private modalService: ModalsService,
+    private pagosService: PagoService
+    ) { }
 
- ngOnInit() {
-   // Escuchamos el observable del modal
-   this.modalService.$modalRealizarPago.subscribe((data) => { this.modalOpenRealizarPago = data })
-   this.modalService.$modalEmitirFactura.subscribe((data) => { this.modalOpenEmitirFactura = data })  
- }
+  ngOnInit() {
+    // Escuchamos el observable del modal
+    this.modalService.$modalVerPago.subscribe((data) => { this.modalOpenVerPago = data })
+    this.modalService.$modalEmitirFactura.subscribe((data) => { this.modalOpenEmitirFactura = data })
 
- openModal(tipo: String) {
-   if (tipo === 'pago')
-     this.modalOpenRealizarPago = true
+    this.pagosService.listaPagos().subscribe(
+      data => this.detallePago = data,
+      err => console.log(err.message)
+    )
+  }
 
-   if (tipo === 'factura')
-     this.modalOpenEmitirFactura = true
- }
+  openModal(tipo: String, idPago?: number) {
+
+    if (tipo === 'ver'){
+      console.log("ver", tipo, idPago);
+
+      this.modalService.$selectedPagoId.next(idPago!)
+      this.modalOpenVerPago = true
+    }
+
+
+    if (tipo === 'emitir'){
+      console.log("emitir", tipo, idPago);
+      this.modalService.$selectedPagoId.next(idPago!)
+      this.modalOpenEmitirFactura = true
+    }
+
+  }
 
 
 }
