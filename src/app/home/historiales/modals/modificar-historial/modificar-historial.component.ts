@@ -31,6 +31,8 @@ export class ModificarHistorialComponent {
   intraoral: HistorialIntraoral
   higuiene: HistorialAntecedenteHiguiene
 
+  today = new Date();
+
   constructor(
     private modalService: ModalsService,
     private historialService: HistorialClinicoService,
