@@ -1,119 +1,116 @@
 <div class="max-w-full p-8 m-8 bg-sidebar-color">
 
-    <div class="flex items-center justify-between mt-3 mb-3">
-        <!-- Buscador -->
-        <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
-            <i class="mr-2 text-lg bi bi-search"></i>
-            <input placeholder="Buscar" name="search" id="search"
-                class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
-        </div>
-
-        <!-- Crear paciente-->
-        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('crear')">
-            Crear nuevo paciente
-        </button>
+  <div class="flex items-center justify-between mt-3 mb-3">
+    <!-- Buscador -->
+    <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
+      <i class="mr-2 text-lg bi bi-search"></i>
+      <input placeholder="Buscar" name="search" [(ngModel)]="buscar" id="search"
+        class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
     </div>
 
-    <!-- Tabla -->
-    <div class="flex flex-col mt-6">
-        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                <div class="overflow-hidden border border-gray-200 rounded-md">
+    <!-- Crear paciente-->
+    <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+      (click)="openModal('crear')">
+      Crear nuevo paciente
+    </button>
+  </div>
 
-                    <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
-                        <thead class="bg-gray-800 ">
-                            <tr>
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Nombres</span>
-                                </th>
+  <!-- Tabla -->
+  <div class="flex flex-col mt-6">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+        <div class="overflow-hidden border border-gray-200 rounded-md">
 
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Apellido Paterno</span>
-                                </th>
+          <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
+            <thead class="bg-gray-800 ">
+              <tr>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Nombres</span>
+                </th>
 
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Apellido Materno</span>
-                                </th>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Apellido Paterno</span>
+                </th>
 
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Teléfono</span>
-                                </th>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Apellido Materno</span>
+                </th>
 
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Acciones</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-700 bg-sidebar-color">
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Teléfono</span>
+                </th>
 
-                            <tr *ngFor="let paciente of pacientes">
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ paciente[0] }}
-                                </td>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Acciones</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-700 bg-sidebar-color">
 
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ paciente[1] }}
-                                </td>
+              <tr *ngFor="let paciente of pacientes | pacientes: buscar">
 
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ paciente[2] }}
-                                </td>
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ paciente.nombre }}
+                </td>
 
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ paciente[3] }}
-                                </td>
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ paciente.apellido_paterno }}
+                </td>
 
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <div class="flex items-center gap-x-6">
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ paciente.apellido_materno }}
+                </td>
 
-                                        <button (click)="openModal('ver')"
-                                            class="text-gray-500 transition-colors duration-200 hover:text-green-500">
-                                            <i class="bi bi-eye-fill"></i>
-                                        </button>
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ paciente.telefono }}
+                </td>
 
-                                        <button (click)="openModal('modificar')"
-                                            class="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </button>
+                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                  <div class="flex items-center gap-x-6">
 
-                                        <button (click)="openModal('eliminar')"
-                                            class="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none">
-                                            <i class="bi bi-trash-fill"></i>
-                                        </button>
+                    <button (click)="openModal('ver', paciente.id_paciente!)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-green-500">
 
-                                    </div>
-                                </td>
-                            </tr>
+                      <i class="bi bi-eye-fill"></i>
+                    </button>
 
-                        </tbody>
-                    </table>
+                    <button (click)="openModal('modificar', paciente.id_paciente!)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
 
-                </div>
-            </div>
+                    <button (click)="openModal('eliminar', paciente.id_paciente!)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
         </div>
+      </div>
     </div>
+  </div>
 
 </div>
 
 
 <div *ngIf="modalOpenCrearPaciente == true">
-    <app-formulario-paciente></app-formulario-paciente>
+  <app-formulario-paciente></app-formulario-paciente>
 </div>
 
 <div *ngIf="modalOpenModificarPaciente == true">
-    <app-modificar-formulario-paciente></app-modificar-formulario-paciente>
+  <app-modificar-formulario-paciente></app-modificar-formulario-paciente>
 </div>
 
 <div *ngIf="modalOpenEliminarPaciente == true">
-    <app-eliminar-paciente></app-eliminar-paciente>
+  <app-eliminar-paciente></app-eliminar-paciente>
 </div>
 
 <div *ngIf="modalOpenDetallePaciente == true">
-    <app-detalle-paciente></app-detalle-paciente>
+  <app-detalle-paciente></app-detalle-paciente>
 </div>

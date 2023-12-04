@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,8 +7,9 @@ import { EventEmitter, Injectable } from '@angular/core';
 export class ModalsService {
 
   // Paciente
-  $modalDetallePaciente = new EventEmitter<any>();
+  $selectedPacienteId = new ReplaySubject<number>(1);
   $modalCrearPaciente = new EventEmitter<any>();
+  $modalDetallePaciente = new EventEmitter<any>();
   $modalModificarPaciente = new EventEmitter<any>();
   $modalEliminarPaciente = new EventEmitter<any>();
 
@@ -15,10 +17,12 @@ export class ModalsService {
   $modalCrearNotificacion = new EventEmitter<any>();
 
   // Pagos
-  $modalRealizarPago = new EventEmitter<any>();
+  $selectedPagoId = new ReplaySubject<number>(1);
+  $modalVerPago = new EventEmitter<any>();
   $modalEmitirFactura = new EventEmitter<any>();
 
   // Personal
+  $selectedPersonalId = new ReplaySubject<number>(1);
   $modalDetallePersonal = new EventEmitter<any>();
   $modalCrearPersonal = new EventEmitter<any>();
   $modalModificarPersonal = new EventEmitter<any>();
@@ -37,6 +41,7 @@ export class ModalsService {
   $modalReporteMensual = new EventEmitter<any>();
 
   // Turnos
+  $selectedTurnoId = new ReplaySubject<number>(1);
   $modalDetalleTurno = new EventEmitter<any>();
   $modalCrearTurno = new EventEmitter<any>();
   $modalModificarTurno = new EventEmitter<any>();
@@ -50,6 +55,7 @@ export class ModalsService {
   $modalModificarHorario = new EventEmitter<any>();
 
   // Historiales clinicos
+  $selectedHistorialId = new ReplaySubject<number>(1);
   $modalDetalleHistorial = new EventEmitter<any>();
   $modalCrearHistorial = new EventEmitter<any>();
   $modalModificarHistorial = new EventEmitter<any>();
@@ -59,5 +65,5 @@ export class ModalsService {
   $modalRegistrarAtencion = new EventEmitter<any>();
 
   constructor() { }
-  
+
 }

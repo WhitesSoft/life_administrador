@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Paciente } from 'src/app/models/Paciente';
 import { ModalsService } from 'src/app/services/modals.service';
+import { PacienteService } from 'src/app/services/paciente.service';
 
 @Component({
   selector: 'app-pacientes',
@@ -8,10 +10,8 @@ import { ModalsService } from 'src/app/services/modals.service';
 })
 export class PacientesComponent {
 
-  pacientes: any = [
-    ['Juan', 'Montero', 'Poclaba', '75725762'],
-    ['Marco', 'Cardozo', 'Izurza', '45454552']
-  ]
+  pacientes: Paciente[] = []
+  buscar = '';
 
   // Estados modal
   modalOpenDetallePaciente = false
@@ -19,30 +19,52 @@ export class PacientesComponent {
   modalOpenModificarPaciente = false
   modalOpenEliminarPaciente = false
 
-  constructor(private modalService: ModalsService) { }
+  constructor(
+    private modalService: ModalsService,
+    private pacienteService: PacienteService
+  ) { }
 
   ngOnInit() {
+
     // Escuchamos el observable del modal
     this.modalService.$modalDetallePaciente.subscribe((data) => { this.modalOpenDetallePaciente = data })
     this.modalService.$modalCrearPaciente.subscribe((data) => { this.modalOpenCrearPaciente = data })
     this.modalService.$modalModificarPaciente.subscribe((data) => { this.modalOpenModificarPaciente = data })
     this.modalService.$modalEliminarPaciente.subscribe((data) => { this.modalOpenEliminarPaciente = data })
+
+    // cargar lista
+    this.cargarLista()
   }
 
-  openModal(tipo: String) {
-    if (tipo === 'ver')
-      this.modalOpenDetallePaciente = true
+  cargarLista() {
+    this.pacienteService.listaPacientes().subscribe(
+      data => {
+        this.pacientes = data
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
 
-    if (tipo === 'crear')
+  openModal(tipo: String, idPaciente?: number) {
+
+    if (tipo === 'crear') {
       this.modalOpenCrearPaciente = true
-
-    if (tipo === 'modificar')
+    }
+    if (tipo === 'ver') {
+      this.modalService.$selectedPacienteId.next(idPaciente!)
+      this.modalOpenDetallePaciente = true
+    }
+    if (tipo === 'modificar') {
+      this.modalService.$selectedPacienteId.next(idPaciente!)
       this.modalOpenModificarPaciente = true
-
-    if (tipo === 'eliminar')
+    }
+    if (tipo === 'eliminar') {
+      this.modalService.$selectedPacienteId.next(idPaciente!)
       this.modalOpenEliminarPaciente = true
+    }
+
   }
-
-
 
 }

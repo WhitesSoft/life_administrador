@@ -1,84 +1,81 @@
 <div class="max-w-full p-8 m-8 bg-sidebar-color">
 
-    <div class="flex items-center gap-2 mt-3 mb-3">
-        <!-- Buscador -->
-        <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
-            <i class="mr-2 text-lg bi bi-search"></i>
-            <input placeholder="Buscar" name="search" id="search"
-                class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
+
+  <!-- Tabla -->
+  <div class="flex flex-col mt-6">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+        <div class="overflow-hidden border border-gray-200 rounded-md">
+
+          <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
+            <thead class="bg-gray-800 ">
+              <tr>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Paciente</span>
+                </th>
+
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Monto</span>
+                </th>
+
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Fecha</span>
+                </th>
+
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Acciones</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-700 bg-sidebar-color">
+
+              <tr *ngFor="let pago of detallePago">
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ pago.paciente }}
+                </td>
+
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ pago.monto }}
+                </td>
+
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ pago.fecha }}
+                </td>
+
+                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                  <div class="flex items-center gap-x-6">
+
+                    <button (click)="openModal('ver', pago.id!)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-green-500">
+
+                      <i class="bi bi-eye-fill"></i>
+                    </button>
+
+                    <button (click)="openModal('emitir', pago.id!)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-green-500">
+
+                      <i class="bi bi-bag-check-fill"></i>
+                    </button>
+
+                  </div>
+                </td>
+
+              </tr>
+
+            </tbody>
+          </table>
+
         </div>
-
-        <div class="flex-1">
-        </div>
-
-        <!-- Realizar pago -->
-        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('pago')">
-            Realizar pago
-        </button>
-
-        <!-- Emitir factura -->
-        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('factura')">
-            Emitir factura
-        </button>
+      </div>
     </div>
-
-    <!-- Tabla -->
-    <div class="flex flex-col mt-6">
-        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                <div class="overflow-hidden border border-gray-200 rounded-md">
-
-                    <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
-                        <thead class="bg-gray-800 ">
-                            <tr>
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Paciente</span>
-                                </th>
-
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Monto</span>
-                                </th>
-
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Fecha</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-700 bg-sidebar-color">
-
-                            <tr *ngFor="let pago of pagos">
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ pago[0] }}
-                                </td>
-
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ pago[1] }}
-                                </td>
-
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ pago[2] }}
-                                </td>
-                            </tr>
-
-                        </tbody>
-                    </table>
-
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
 
 
-<div *ngIf="modalOpenRealizarPago == true">
-    <app-realizar-pago></app-realizar-pago>
+<div *ngIf="modalOpenVerPago == true">
+  <app-realizar-pago></app-realizar-pago>
 </div>
 
 <div *ngIf="modalOpenEmitirFactura == true">
-    <app-emitir-factura></app-emitir-factura>
+  <app-emitir-factura></app-emitir-factura>
 </div>

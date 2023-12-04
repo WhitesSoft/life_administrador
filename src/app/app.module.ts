@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http'
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +8,10 @@ import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { AuthModule } from './auth/auth.module';
-import { HomeModule } from './home/home.module';
+import { interceptorProvider } from './interceptors/interceptor.service';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalsService } from './services/modals.service';
 
 
 @NgModule({
@@ -17,12 +21,14 @@ import { HomeModule } from './home/home.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
     DashboardModule,
-    AuthModule, 
-    HomeModule
+    AuthModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [interceptorProvider, ModalsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

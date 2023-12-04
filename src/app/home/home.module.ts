@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { InicioComponent } from './inicio/inicio.component';
 import { PacientesComponent } from './pacientes/pacientes.component';
 import { HomeRoutingModule } from './home-routing.module';
@@ -45,6 +47,9 @@ import { DetalleHistorialComponent } from './historiales/modals/detalle-historia
 import { ModificarHistorialComponent } from './historiales/modals/modificar-historial/modificar-historial.component';
 import { EliminarHistorialComponent } from './historiales/modals/eliminar-historial/eliminar-historial.component';
 import { RegistrarAtencionComponent } from './inicio/modals/registrar-atencion/registrar-atencion.component';
+import { ModalsService } from '../services/modals.service';
+import { PacientesPipe } from '../pipes/pacientes.pipe';
+import { HistorialesPipe } from '../pipes/historiales.pipe';
 
 
 
@@ -92,11 +97,18 @@ import { RegistrarAtencionComponent } from './inicio/modals/registrar-atencion/r
     ModificarHistorialComponent,
     EliminarHistorialComponent,
     RegistrarAtencionComponent,
+    PacientesPipe,
+    HistorialesPipe
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory }),
+    FormsModule,
+    ReactiveFormsModule,
+  ],
+  providers:[
+    ModalsService
   ]
 })
 export class HomeModule { }

@@ -1,109 +1,115 @@
 <div class="max-w-full p-8 m-8 bg-sidebar-color">
 
-    <div class="flex items-center gap-2 mt-3 mb-3">
-       
-        <div class="flex flex-1">
-        </div>
+  <div class="flex items-center gap-2 mt-3 mb-3">
 
-        <!-- pagos personal -->
-        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('pagos')">
-            Pagos personal
-        </button>
-
-        <!-- controlar asistenia -->
-        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('controlar')">
-            Controlar asistencia
-        </button>
-
-        <!-- registrar personal-->
-        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
-            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('crear')">
-            Registrar personal
-        </button>
+    <div class="flex flex-1">
     </div>
 
-    <!-- Tabla -->
-    <div class="flex flex-col mt-6">
-        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
-                <div class="overflow-hidden border border-gray-200 rounded-md">
+    <!-- pagos personal -->
+    <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+      (click)="openModal('pagos')">
+      Pagos personal
+    </button>
 
-                    <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
-                        <thead class="bg-gray-800 ">
-                            <tr>
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Personal</span>
-                                </th>
+    <!-- controlar asistenia -->
+    <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+      (click)="openModal('controlar')">
+      Controlar asistencia
+    </button>
 
-                                <th scope="col"
-                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
-                                    <span>Acciones</span>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-700 bg-sidebar-color">
+    <!-- registrar personal-->
+    <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+      (click)="openModal('crear')">
+      Registrar personal
+    </button>
+  </div>
 
-                            <tr *ngFor="let p of personal">
-                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ p[0] }}
-                                </td>
+  <!-- Tabla -->
+  <div class="flex flex-col mt-6">
+    <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+        <div class="overflow-hidden border border-gray-200 rounded-md">
 
-                                <td class="px-4 py-4 text-sm whitespace-nowrap">
-                                    <div class="flex items-center gap-x-6">
+          <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
+            <thead class="bg-gray-800 ">
+              <tr>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Personal</span>
+                </th>
 
-                                        <button (click)="openModal('ver')"
-                                            class="text-gray-500 transition-colors duration-200 hover:text-green-500">
-                                            <i class="bi bi-eye-fill"></i>
-                                        </button>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Tipo</span>
+                </th>
 
-                                        <button (click)="openModal('modificar')"
-                                            class="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none">
-                                            <i class="bi bi-pencil-square"></i>
-                                        </button>
+                <th scope="col" class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                  <span>Acciones</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-700 bg-sidebar-color">
 
-                                        <button (click)="openModal('eliminar')"
-                                            class="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none">
-                                            <i class="bi bi-trash-fill"></i>
-                                        </button>
+              <tr *ngFor="let p of personal">
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ p.nombre }} {{ p.apellido_paterno }} {{ p.apellido_materno }}
+                </td>
 
-                                    </div>
-                                </td>
-                            </tr>
+                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                  {{ p.rol }}
+                </td>
 
-                        </tbody>
-                    </table>
+                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                  <div class="flex items-center gap-x-6">
 
-                </div>
-            </div>
+                    <button (click)="openModal('ver', p?.id_personal)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-green-500">
+                      <i class="bi bi-eye-fill"></i>
+                    </button>
+
+                    <button (click)="openModal('modificar', p?.id_personal)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none">
+                      <i class="bi bi-pencil-square"></i>
+                    </button>
+
+                    <button (click)="openModal('eliminar', p?.id_personal)"
+                      class="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none">
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+
+                  </div>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
         </div>
+      </div>
     </div>
+  </div>
 
 </div>
 
 
 <div *ngIf="modalOpenDetallePersonal == true">
-    <app-detalle-personal></app-detalle-personal>
+  <app-detalle-personal></app-detalle-personal>
 </div>
 
 <div *ngIf="modalOpenCrearPersonal == true">
-    <app-crear-personal></app-crear-personal>
+  <app-crear-personal></app-crear-personal>
 </div>
 
 <div *ngIf="modalOpenModificarPersonal == true">
-    <app-modificar-personal></app-modificar-personal>
+  <app-modificar-personal></app-modificar-personal>
 </div>
 
 <div *ngIf="modalOpenEliminarPersonal == true">
-    <app-eliminar-personal></app-eliminar-personal>
+  <app-eliminar-personal></app-eliminar-personal>
 </div>
 
 <div *ngIf="modalOpenControlarAsistencia == true">
-    <app-controlar-asistencia></app-controlar-asistencia>
+  <app-controlar-asistencia></app-controlar-asistencia>
 </div>
 
 <div *ngIf="modalOpenPagosPersonal == true">
-    <app-pagos-personal></app-pagos-personal>
+  <app-pagos-personal></app-pagos-personal>
 </div>

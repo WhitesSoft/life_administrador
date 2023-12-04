@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from '../services/token.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -26,10 +27,21 @@ export class DashboardComponent {
     { title: "Salir", iconClass: "bi-box-arrow-left", routerLink: "/login" },
   ]
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private tokenService: TokenService
+  ) { }
 
   navigateTo(route: string) {
-    this.router.navigate([route]);
+    if (route === '/login') {
+      // borramos todo acceso
+      this.tokenService.cerrarSesion()
+      this.router.navigate([route]);
+    } else {
+      this.router.navigate([route]);
+    }
+
+
   }
 
   toggleSidebar() {

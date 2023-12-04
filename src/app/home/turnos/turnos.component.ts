@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Turno } from 'src/app/models/Turno';
 import { ModalsService } from 'src/app/services/modals.service';
+import { TurnoService } from 'src/app/services/turno.service';
 
 @Component({
   selector: 'app-turnos',
@@ -8,15 +10,17 @@ import { ModalsService } from 'src/app/services/modals.service';
 })
 export class TurnosComponent {
 
-  turnos: any = [
-    ['10:00 am', 'Juan Montero', 'Si'],
-    ['11:00 am', 'Juan Montero', 'Si'],
-    ['12:00 pm', '', ''],
-    ['14:00 pm', '', ''],
-    ['15:00 pm', 'Juan Montero', ''],
-    ['15:00 pm', '', ''],
-    ['15:00 pm', 'Juan Montero', 'Si'],
-  ]
+  // turnos: any = [
+  //   ['10:00 am', 'Juan Montero', 'Si'],
+  //   ['11:00 am', 'Juan Montero', 'Si'],
+  //   ['12:00 pm', '', ''],
+  //   ['14:00 pm', '', ''],
+  //   ['15:00 pm', 'Juan Montero', ''],
+  //   ['15:00 pm', '', ''],
+  //   ['15:00 pm', 'Juan Montero', 'Si'],
+  // ]
+
+  turnos: Turno[] = []
 
   // Estados modal
   modalOpenDetalleTurno = false
@@ -24,7 +28,10 @@ export class TurnosComponent {
   modalOpenModificarTurno = false
   modalOpenEliminarTurno = false
 
-  constructor(private modalService: ModalsService) { }
+  constructor(
+    private modalService: ModalsService,
+    private turnoService: TurnoService
+  ) { }
 
   ngOnInit() {
     // Escuchamos el observable del modal
@@ -32,20 +39,46 @@ export class TurnosComponent {
     this.modalService.$modalCrearTurno.subscribe((data) => { this.modalOpenCrearTurno = data })
     this.modalService.$modalModificarTurno.subscribe((data) => { this.modalOpenModificarTurno = data })
     this.modalService.$modalEliminarTurno.subscribe((data) => { this.modalOpenEliminarTurno = data })
+
+    // cargamos la lista
+    this.cargarLista()
   }
 
-  openModal(tipo: String) {
-    if (tipo === 'ver')
+  cargarLista() {
+    this.turnoService.listaTurnos().subscribe(
+      data => {
+        this.turnos = data
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
+
+  openModal(tipo: String, idTurno?: number) {
+    if (tipo === 'ver') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenDetalleTurno = true
+    }
 
-    if (tipo === 'crear')
+
+    if (tipo === 'crear') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenCrearTurno = true
+    }
 
-    if (tipo === 'modificar')
+
+    if (tipo === 'modificar') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenModificarTurno = true
+    }
 
-    if (tipo === 'eliminar')
+
+    if (tipo === 'eliminar') {
+      this.modalService.$selectedTurnoId.next(idTurno!)
       this.modalOpenEliminarTurno = true
+    }
+
   }
 
 
