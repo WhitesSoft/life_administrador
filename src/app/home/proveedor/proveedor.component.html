@@ -1,0 +1,92 @@
+<div class="max-w-full p-8 m-8 bg-sidebar-color">
+
+    <div class="flex items-center gap-2 mt-3 mb-3">
+       
+        <div class="flex flex-1">
+        </div>
+
+       
+        <!-- registrar personal-->
+        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('crear')">
+            Agregar proveedor
+        </button>
+    </div>
+
+    <!-- Tabla -->
+    <div class="flex flex-col mt-6">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                <div class="overflow-hidden border border-gray-200 rounded-md">
+
+                    <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
+                        <thead class="bg-gray-800 ">
+                            <tr>
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Proveedor</span>
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Acciones</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700 bg-sidebar-color">
+
+                            <tr *ngFor="let p of proveedor">
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                                    {{ p[0] }}
+                                </td>
+
+                                <td class="px-4 py-4 text-sm whitespace-nowrap">
+                                    <div class="flex items-center gap-x-6">
+
+                                        <button (click)="openModal('ver')"
+                                            class="text-gray-500 transition-colors duration-200 hover:text-green-500">
+                                            <i class="bi bi-eye-fill"></i>
+                                        </button>
+
+                                        <button (click)="openModal('modificar')"
+                                            class="text-gray-500 transition-colors duration-200 hover:text-yellow-500 focus:outline-none">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </button>
+
+                                        <button (click)="openModal('eliminar')"
+                                            class="text-gray-500 transition-colors duration-200 hover:text-red-500 focus:outline-none">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div *ngIf="modalOpenDetalleProveedor == true">
+    <app-detalle-proveedor></app-detalle-proveedor>
+</div>
+
+<div *ngIf="modalOpenCrearProveedor == true">
+    <app-crear-proveedor></app-crear-proveedor>
+</div>
+
+<div *ngIf="modalOpenModificarProveedor == true">
+    <app-modificar-proveedor></app-modificar-proveedor>
+</div>
+
+<div *ngIf="modalOpenEliminarProveedor == true">
+    <app-eliminar-proveedor></app-eliminar-proveedor>
+</div>
+
+

@@ -1,0 +1,121 @@
+<!-- Contenedor global del modal -->
+<div class="fixed inset-0 z-50">
+
+    <!-- Caracteristicas del modal -->
+    <div class="flex items-center justify-center min-h-screen">
+
+        <!-- Oscurecer pantalla al abrir modal -->
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75 modal-bg-container"></div>
+
+        <!-- Contenido del modal -->
+        <div class="overflow-hidden transition-all transform rounded-md shadow-xl modal-container bg-sidebar-color">
+
+            <!-- Contenido -->
+            <div class="p-5 modal-wrapper-flex">
+
+                <h4 class="mb-4 text-2xl font-semibold text-center">Modificar datos de proveedor</h4>
+
+                <!-- Cabeza -->
+                <div class="flex items-center justify-center gap-4 p-3 border-gray-800 rounded-md border-1">
+                    <!-- Logo -->
+                    <img class="border-gray-800 rounded-full border-1" src="./assets/images/logo.png"
+                        style="width: 80px; height: 80px;" alt="dashboard widget" />
+                    <!-- Datos -->
+                    <div class="flex-1 m-auto">
+                        <h3 class="text-2xl font-semibold text-center">Dental Xperience</h3>
+                    </div>
+
+                </div>
+
+                <!-- Formulario -->
+                <form action="">
+
+                    <h5 class="mt-4 text-lg font-semibold text-start">Datos personales</h5>
+
+                    <div class="grid grid-cols-3 gap-3 p-2 border-gray-800 rounded-md border-1">
+
+                        <!-- Input Nombres -->
+                        <div class="form__group">
+                            <div class="relative">
+                                <input type="text" id="nombres" class="block peer" placeholder=" "
+                                    formControlName="nombres" />
+                                <label for="nombres"
+                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                    Nombres
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Input ApellidoPaterno -->
+                        <div class="form__group">
+                            <div class="relative">
+                                <input type="text" id="ap" class="block peer" placeholder=" " formControlName="ap" />
+                                <label for="ap"
+                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                    Apellido paterno
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Input ApellidoMaterno -->
+                        <div class="form__group">
+                            <div class="relative">
+                                <input type="text" id="am" class="block peer" placeholder=" " formControlName="am" />
+                                <label for="am"
+                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                    Apellido materno
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Input telefono -->
+                        <div class="form__group">
+                            <div class="relative">
+                                <input type="number" id="telefono" class="block peer" placeholder=" "
+                                    formControlName="telefono" />
+                                <label for="telefono"
+                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                    Telefono
+                                </label>
+                            </div>
+                        </div>
+
+
+                        <!-- Input direccion -->
+                        <div class="col-span-2 form__group">
+                            <div class="relative">
+                                <input type="text" id="direccion" class="block peer" placeholder=" "
+                                    formControlName="direccion" />
+                                <label for="direccion"
+                                    class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                    Direccion
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+      
+                </form>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex flex-row-reverse gap-4 px-4 py-3 bg-body-color">
+                <button
+                    class="w-full px-3 py-2 font-medium border border-gray-800 rounded-md shadow-md bg-sidebar-color text-text-color hover:bg-gray-200"
+                    (click)="closeModal()">
+                    Cancelar
+                </button>
+                
+                <button
+                    class="w-full px-3 py-2 font-medium text-white border border-gray-800 rounded-md shadow-md bg-primary-color hover:bg-primary-color-dark ">
+                    Modificar
+                </button>
+            </div>
+            
+        </div>
+
+    </div>
+
+</div>
+
+

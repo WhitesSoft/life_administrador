@@ -1,0 +1,593 @@
+<!-- Contenedor global del modal -->
+<div class="fixed inset-0 z-50">
+
+    <!-- Caracteristicas del modal -->
+    <div class="flex items-center justify-center min-h-screen">
+
+        <!-- Oscurecer pantalla al abrir modal -->
+        <div class="fixed inset-0 bg-gray-600 bg-opacity-75 modal-bg-container"></div>
+
+        <!-- Contenido del modal -->
+        <div class="overflow-hidden transition-all transform rounded-md shadow-xl modal-container bg-sidebar-color">
+
+            <!-- Contenido -->
+            <div class="p-5 modal-wrapper-flex">
+
+                <h4 class="mb-4 text-2xl font-semibold text-center">Crear nuevo historial clinico</h4>
+
+                <!-- Cabeza -->
+                <div class="flex items-center justify-center gap-4 p-3 border-gray-800 rounded-md border-1">
+                    <!-- Logo -->
+                    <img class="border-gray-800 rounded-full border-1" src="./assets/images/logo.png"
+                        style="width: 80px; height: 80px;" alt="dashboard widget" />
+                    <!-- Datos -->
+                    <div class="flex-1 m-auto">
+                        <h3 class="text-2xl font-semibold text-center">Dental Xperience</h3>
+                    </div>
+
+                </div>
+
+                <!-- Formulario -->
+                <form action="">
+
+                    <!-- Contenido con scroll -->
+                    <div class="overflow-y-auto modal-content-container max-h-80">
+
+                        <!-- Datos personales -->
+                        <h5 class="mt-4 text-lg font-semibold text-start">Datos personales</h5>
+                        <div class="grid grid-cols-3 gap-3 p-2 border-gray-800 rounded-md border-1">
+
+                            <!-- Input Nombres -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="nombres" class="block peer" placeholder=" "
+                                        formControlName="nombres" />
+                                    <label for="nombres"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Nombres
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input ApellidoPaterno -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="ap" class="block peer" placeholder=" "
+                                        formControlName="ap" />
+                                    <label for="ap"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Apellido paterno
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input ApellidoMaterno -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="am" class="block peer" placeholder=" "
+                                        formControlName="am" />
+                                    <label for="am"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Apellido materno
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input edad -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="number" id="edad" class="block peer" placeholder=" "
+                                        formControlName="edad" />
+                                    <label for="edad"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Edad
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input sexo -->
+                            <div
+                                class="flex items-center justify-center border-2 border-gray-300 rounded-md form__group">
+                                <div class="relative">
+                                    <span
+                                        class="mb-1 text-sm bg-white px-2 text-gray-500 absolute top-[-4px] left-1 z-10 origin-[0] -translate-y-4 scale-95 transform">Sexo</span>
+                                    <ul class="flex w-full h-full m-auto text-sm font-medium text-gray-400 ">
+                                        <li class="w-full ml-[-20px] ">
+                                            <div class="flex items-center">
+                                                <input id="rmasculino" type="radio" value=""
+                                                    formControlName="rmasculino" name="list-radio">
+                                                <label for="rmasculino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">Masculino</label>
+                                            </div>
+                                        </li>
+                                        <li class="w-full ">
+                                            <div class="flex items-center px-2">
+                                                <input id="rfemenino" type="radio" value="" formControlName="rfemenino"
+                                                    name="list-radio">
+                                                <label for="rfemenino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">Femenino</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Input fecha nacimiento -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="date" id="fnacimiento" class="block peer" placeholder=" "
+                                        formControlName="fnacimiento" />
+                                    <label for="fnacimiento"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Fecha de nacimiento
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input ciudad -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="ciudad" class="block peer" placeholder=" "
+                                        formControlName="ciudad" />
+                                    <label for="ciudad"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Ciudad
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input pais -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="pais" class="block peer" placeholder=" "
+                                        formControlName="pais" />
+                                    <label for="pais"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Pais
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input nivel educacion -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="educacion" class="block peer" placeholder=" "
+                                        formControlName="educacion" />
+                                    <label for="educacion"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Nivel de educacion
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input profesion -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="profesion" class="block peer" placeholder=" "
+                                        formControlName="profesion" />
+                                    <label for="profesion"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Profesion
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input estadocivil -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="estadocivil" class="block peer" placeholder=" "
+                                        formControlName="estadocivil" />
+                                    <label for="estadocivil"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Estado civil
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input direccion -->
+                            <div class="col-span-2 form__group">
+                                <div class="relative">
+                                    <input type="text" id="direccion" class="block peer" placeholder=" "
+                                        formControlName="direccion" />
+                                    <label for="direccion"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Direccion
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input telefono -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="number" id="telefono" class="block peer" placeholder=" "
+                                        formControlName="telefono" />
+                                    <label for="telefono"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Telefono
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Motivo de la consulta -->
+                        <h5 class="mt-4 text-lg font-semibold text-start">Motivo de la consulta</h5>
+                        <div class="grid grid-cols-3 gap-3 p-2 border-gray-800 rounded-md border-1">
+
+                            <!-- Input motivoconsulta -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="motivoconsulta" class="block peer" placeholder=" "
+                                        formControlName="motivoconsulta" />
+                                    <label for="motivoconsulta"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Motivo de la consulta
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input ultima visita con el odontologo -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="date" id="ultimavisita" class="block peer" placeholder=" "
+                                        formControlName="ultimavisita" />
+                                    <label for="ultimavisita"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Ultima visita
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Antecedentes de salud -->
+                        <h5 class="mt-4 text-lg font-semibold text-start">Antecedentes de salud</h5>
+                        <div class="grid grid-cols-3 gap-3 p-2 border-gray-800 rounded-md border-1">
+
+                            <!-- Input alergias -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="alergias" class="block peer" placeholder=" "
+                                        formControlName="alergias" />
+                                    <label for="alergias"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Alergias
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input antecedentes -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="antecedentes" class="block peer" placeholder=" "
+                                        formControlName="antecedentes" />
+                                    <label for="antecedentes"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Antecedentes
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Examen extra oral -->
+                        <h5 class="mt-4 text-lg font-semibold text-start">Examen extra oral</h5>
+                        <div class="grid grid-cols-3 gap-3 p-2 border-gray-800 rounded-md border-1">
+
+                            <!-- Input atm -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="atm" class="block peer" placeholder=" "
+                                        formControlName="atm" />
+                                    <label for="atm"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        ATM
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Ganglios linfaticos -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="ganglios" class="block peer" placeholder=" "
+                                        formControlName="ganglios" />
+                                    <label for="ganglios"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Ganglios linfaticos
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Respirador -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="respirador" class="block peer" placeholder=" "
+                                        formControlName="respirador" />
+                                    <label for="respirador"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Respirador
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Labios -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="labios" class="block peer" placeholder=" "
+                                        formControlName="labios" />
+                                    <label for="labios"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Labios
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Habitos -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="habitos" class="block peer" placeholder=" "
+                                        formControlName="habitos" />
+                                    <label for="habitos"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Habitos
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Otros -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="otros" class="block peer" placeholder=" "
+                                        formControlName="otros" />
+                                    <label for="otros"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Otros
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Examen intra oral -->
+                        <h5 class="mt-4 text-lg font-semibold text-start">Examen intra oral</h5>
+                        <div class="grid grid-cols-3 gap-3 p-2 border-gray-800 rounded-md border-1">
+
+                            <!-- Input Lengua -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="lengua" class="block peer" placeholder=" "
+                                        formControlName="lengua" />
+                                    <label for="lengua"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Lengua
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Paladar -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="paladar" class="block peer" placeholder=" "
+                                        formControlName="paladar" />
+                                    <label for="paladar"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Paladar
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Piso de la boca -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="pisoboca" class="block peer" placeholder=" "
+                                        formControlName="pisoboca" />
+                                    <label for="pisoboca"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Piso de la boca
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Mucosa yugal -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="mucosayugal" class="block peer" placeholder=" "
+                                        formControlName="mucosayugal" />
+                                    <label for="mucosayugal"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Mucosa yugal
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input Encias -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="encias" class="block peer" placeholder=" "
+                                        formControlName="encias" />
+                                    <label for="encias"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Encias
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input protesis -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="protesis" class="block peer" placeholder=" "
+                                        formControlName="protesis" />
+                                    <label for="protesis"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Usa protesis?
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Antecedentes de higuiene oral -->
+                        <h5 class="mt-4 text-lg font-semibold text-start">Antecedentes de higuiene oral</h5>
+                        <div class="grid grid-cols-3 gap-3 p-2 border-gray-800 rounded-md border-1">
+
+                            <!-- Input frecuencia cepillado -->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="frecuencia" class="block peer" placeholder=" "
+                                        formControlName="frecuencia" />
+                                    <label for="frecuencia"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Frecuencia cepillado
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Input cepillodental -->
+                            <div
+                                class="flex items-center justify-center border-2 border-gray-300 rounded-md form__group">
+                                <div class="relative">
+                                    <span
+                                        class="mb-1 text-sm bg-white px-2 text-gray-500 absolute top-[-4px] left-1 z-10 origin-[0] -translate-y-4 scale-95 transform">Usa
+                                        cepillo dental</span>
+                                    <ul class="flex w-full h-full m-auto text-sm font-medium text-gray-400 ">
+                                        <li class="w-full ml-[-20px] ">
+                                            <div class="flex items-center">
+                                                <input id="rmasculino" type="radio" value=""
+                                                    formControlName="rmasculino" name="list-radio">
+                                                <label for="rmasculino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">Si</label>
+                                            </div>
+                                        </li>
+                                        <li class="w-full ">
+                                            <div class="flex items-center px-2">
+                                                <input id="rfemenino" type="radio" value="" formControlName="rfemenino"
+                                                    name="list-radio">
+                                                <label for="rfemenino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">No</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Input hilodental -->
+                            <div
+                                class="flex items-center justify-center border-2 border-gray-300 rounded-md form__group">
+                                <div class="relative">
+                                    <span
+                                        class="mb-1 text-sm bg-white px-2 text-gray-500 absolute top-[-4px] left-1 z-10 origin-[0] -translate-y-4 scale-95 transform">Usa
+                                        hilo dental</span>
+                                    <ul class="flex w-full h-full m-auto text-sm font-medium text-gray-400 ">
+                                        <li class="w-full ml-[-20px] ">
+                                            <div class="flex items-center">
+                                                <input id="rmasculino" type="radio" value=""
+                                                    formControlName="rmasculino" name="list-radio">
+                                                <label for="rmasculino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">Si</label>
+                                            </div>
+                                        </li>
+                                        <li class="w-full ">
+                                            <div class="flex items-center px-2">
+                                                <input id="rfemenino" type="radio" value="" formControlName="rfemenino"
+                                                    name="list-radio">
+                                                <label for="rfemenino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">No</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Input enjuague bucal -->
+                            <div
+                                class="flex items-center justify-center border-2 border-gray-300 rounded-md form__group">
+                                <div class="relative">
+                                    <span
+                                        class="mb-1 text-sm bg-white px-2 text-gray-500 absolute top-[-4px] left-1 z-10 origin-[0] -translate-y-4 scale-95 transform">Usa
+                                        enjuague bucal</span>
+                                    <ul class="flex w-full h-full m-auto text-sm font-medium text-gray-400 ">
+                                        <li class="w-full ml-[-20px] ">
+                                            <div class="flex items-center">
+                                                <input id="rmasculino" type="radio" value=""
+                                                    formControlName="rmasculino" name="list-radio">
+                                                <label for="rmasculino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">Si</label>
+                                            </div>
+                                        </li>
+                                        <li class="w-full ">
+                                            <div class="flex items-center px-2">
+                                                <input id="rfemenino" type="radio" value="" formControlName="rfemenino"
+                                                    name="list-radio">
+                                                <label for="rfemenino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">No</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <!-- Input sangranencias -->
+                            <div
+                                class="flex items-center justify-center border-2 border-gray-300 rounded-md form__group">
+                                <div class="relative">
+                                    <span
+                                        class="mb-1 text-sm bg-white px-2 text-gray-500 absolute top-[-4px] left-1 z-10 origin-[0] -translate-y-4 scale-95 transform">Le sangran las encias</span>
+                                    <ul class="flex w-full h-full m-auto text-sm font-medium text-gray-400 ">
+                                        <li class="w-full ml-[-20px] ">
+                                            <div class="flex items-center">
+                                                <input id="rmasculino" type="radio" value=""
+                                                    formControlName="rmasculino" name="list-radio">
+                                                <label for="rmasculino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">Si</label>
+                                            </div>
+                                        </li>
+                                        <li class="w-full ">
+                                            <div class="flex items-center px-2">
+                                                <input id="rfemenino" type="radio" value="" formControlName="rfemenino"
+                                                    name="list-radio">
+                                                <label for="rfemenino"
+                                                    class="w-full ml-2 text-sm font-medium text-gray-500">No</label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+
+                            <!-- Input higuiene bucal-->
+                            <div class="form__group">
+                                <div class="relative">
+                                    <input type="text" id="higuienebucal" class="block peer" placeholder=" "
+                                        formControlName="higuienebucal" />
+                                    <label for="higuienebucal"
+                                        class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                                        Higuiene bucal
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- Botones -->
+            <div class="flex flex-row-reverse gap-4 px-4 py-3 bg-body-color">
+                <button
+                    class="w-full px-3 py-2 font-medium border border-gray-800 rounded-md shadow-md bg-sidebar-color text-text-color hover:bg-gray-200"
+                    (click)="closeModal()">
+                    Cancelar
+                </button>
+
+                <button
+                    class="w-full px-3 py-2 font-medium text-white border border-gray-800 rounded-md shadow-md bg-primary-color hover:bg-primary-color-dark ">
+                    Crear
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

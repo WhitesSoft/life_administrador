@@ -6,23 +6,53 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
-* {
-    font-family: 'Poppins', sans-serif;   
-    margin: 0;
-    padding: 0;
+@layer base {
+
+  [type='text'],
+  [type='email'],
+  [type='url'],
+  [type='password'],
+  [type='number'],
+  [type='date'],
+  [type='datetime-local'],
+  [type='month'],
+  [type='search'],
+  [type='tel'],
+  [type='time'],
+  [type='week'],
+  [multiple],
+  textarea,
+  select {
+    @apply w-full px-3 py-3 text-xs placeholder-gray-400 border-2 border-gray-300 rounded-md focus:z-10 focus:border-primary-color focus:outline-none focus:ring-primary-color;
+  }
+
+  [type='checkbox'],
+  [type='radio'] {
+    @apply w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-color focus:ring-2 focus:ring-primary-color peer-checked:bg-primary-color;
+  }
 }
 
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
 :root {
-    /* ===== Colors ===== */
-    --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
-    --primary-color: #695CFE;
-    --primary-color-light: #F6F5FF;
-    --toggle-color: #DDD;
-    --text-color: #707070;
-    /* ====== Transition ====== */
-    --tran-03: all 0.2s ease;
-    --tran-03: all 0.3s ease;
-    --tran-04: all 0.3s ease;
-    --tran-05: all 0.3s ease;
+  /* ===== Colors ===== */
+  --body-color: #E4E9F7;
+  --sidebar-color: #FFF;
+  --primary-color: #695CFE;
+  --primary-color-light: #F6F5FF;
+  --primary-color-dark: #4e489e;
+  --toggle-color: #DDD;
+  --text-color: #707070;
+  /* ====== Transition ====== */
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
 }

@@ -1,0 +1,66 @@
+<div class="max-w-full p-8 m-8 bg-sidebar-color">
+
+    <div class="flex items-center justify-between mt-3 mb-3">
+        <!-- Buscador -->
+        <div class="flex items-center w-1/4 px-4 py-2 rounded-md bg-body-color">
+            <i class="mr-2 text-lg bi bi-search"></i>
+            <input placeholder="Buscar" name="search" id="search"
+                class="w-full text-base font-medium bg-transparent text-text-color focus:outline-none">
+        </div>
+
+        <!-- Crear notificacion-->
+        <button class="p-2 font-semibold text-white rounded-md bg-primary-color hover:bg-primary-color-dark"
+            data-bs-toggle="modal" data-bs-target="#modalEvento" (click)="openModal('crear')">
+            Crear notificación
+        </button>
+    </div>
+
+    <!-- Tabla -->
+    <div class="flex flex-col mt-6">
+        <div class="-mx-4 -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+            <div class="inline-block min-w-full py-2 align-middle md:px-6 lg:px-8">
+                <div class="overflow-hidden border border-gray-200 rounded-md">
+
+                    <table class="min-w-full divide-y divide-gray-700 dark:divide-gray-700">
+                        <thead class="bg-gray-800 ">
+                            <tr>
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Notificación</span>
+                                </th>
+
+                                <th scope="col"
+                                    class="px-4 py-3.5 text-sm font-normal text-left rtl:text-right text-gray-400">
+                                    <span>Paciente</span>
+                                </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-700 bg-sidebar-color">
+
+                            <tr *ngFor="let notificacion of notificaciones">
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                                    {{ notificacion[0] }}
+                                </td>
+
+                                <td class="px-4 py-4 text-sm text-gray-800 whitespace-nowrap">
+                                    {{ notificacion[1] }}
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div *ngIf="modalOpenCrearNotificacion == true">
+    <app-crear-notificacion></app-crear-notificacion>
+</div>
+
+

@@ -1,0 +1,97 @@
+<div class="flex w-screen h-screen">
+
+  <!-- lado izquierdo -->
+  <div class="items-center justify-center flex-1 hidden bg-cover auth-bg bg-primary-color lg:flex">
+    <div class="max-w-2xl p-8 space-y-4 text-center text-white">
+      <div class="flex items-center justify-center w-full">
+        <img src="./assets/images/logo.png" style="width: 200px; height: 200px;" alt="dashboard widget" />
+      </div>
+      <h1 class="text-4xl font-bold">"Dental Xperience"</h1>
+      <p class="text-xs font-light">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+        dolore
+        magna aliqua. Ut enim ad minim veniam, quis
+        nostrudexercitation ullamco laboris
+        nisi ut
+        aliquip ex ea commodo consequat. Duis
+        aute irure
+        dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+        occaecat
+        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+    </div>
+  </div>
+
+  <!-- Lado derecho -->
+  <div class="flex items-center justify-center flex-1 bg-sidebar-color dark:bg-night-700">
+    <div class="max-w-md overflow-y-auto px-4 sm:w-[500px]">
+      <!-- logo -->
+      <div class="flex items-center justify-center">
+        <a class="p-2 rounded bg-primary-500">
+          <!-- <svg-icon src="assets/icons/logo.svg" [svgClass]="'h-5 w-5'"> </svg-icon> -->
+        </a>
+      </div>
+
+      <!-- Formulario -->
+      <form class="my-10 space-y-6">
+
+        <div class="text-center mb-14">
+          <h2 class="mb-1 text-3xl font-semibold text-gray-700">
+            Hola, de nuevo!
+          </h2>
+          <p class="text-sm text-gray-400">Ingresa tus credenciales para iniciar sesión.</p>
+        </div>
+
+        <div class="space-y-3 text-left">
+
+          <!-- Input Usuario -->
+          <div>
+            <div class="relative">
+              <input type="text" id="usuario" class="block peer" placeholder=" " name="usuario" [(ngModel)]="usuario" />
+              <label for="email"
+                class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:text-primary-color">
+                Usuario
+              </label>
+            </div>
+          </div>
+
+          <!-- Input Password -->
+          <div>
+            <div class="relative">
+              <input type="password" id="password" class="block peer" placeholder=" " name="password"
+                [(ngModel)]="password" />
+              <label for="password"
+                class="absolute top-2 left-1 z-10 origin-[0] -translate-y-4 scale-95 transform bg-white px-2 text-sm text-gray-500 duration-300 peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:scale-100 peer-focus:top-2 peer-focus:-translate-y-4 peer-focus:scale-95 peer-focus:px-2 peer-focus:peer-focus:text-primary-color">
+                Contraseña
+              </label>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex items-center justify-between space-x-3">
+          <div class="flex items-center">
+            <input id="remember-me" name="remember-me" type="checkbox" />
+            <label for="remember-me" class="block ml-2 text-sm text-gray-400">
+              Recordarme </label>
+          </div>
+
+          <div class="text-sm">
+            <a routerLink="" class="font-medium cursor-pointer text-primary-color hover:text-primary-color-dark">
+              ¿Olvidaste tu contraseña?
+            </a>
+          </div>
+        </div>
+
+        <!-- Submit Button -->
+        <button (click)="login()"
+          class="relative flex justify-center w-full px-4 py-2 mb-10 text-sm font-medium text-white border border-transparent rounded-md group bg-primary-color focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 hover:bg-primary-color-dark">
+          Iniciar Sesión
+        </button>
+
+
+      </form>
+
+    </div>
+  </div>
+</div>
